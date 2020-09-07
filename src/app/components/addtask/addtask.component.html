@@ -1,0 +1,53 @@
+<body id="bo">
+    <div class="wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light nnaavv" style="background-color: #F0F8FF;">
+            <a class="navbar-brand navi" routerLink="/"><img src="../../../assets/logo.png"width="80" height="80"/></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="margin-top:40px;">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav bbtn">
+                <button style="margin-top: 5px;" class="btn" routerLink="/adminprofile">PROFILE</button>
+                <button style="margin-top: 5px;" class="btn btn1" (click)="loggout()">LOGOUT</button>
+              </div>
+            </div>
+          </nav>
+        <br><br><br>
+        <div class="card card1">
+            <h1 class="hname">ADD NEW TASK</h1>
+            <form class="form">
+                <div class="card tname form-group">
+                    <label><b>Intern Name:</b></label>
+                    <input type="text" class="inp" placeholder="Intern's Name" name="username" [(ngModel)]="newTask.username" ng-required="true">
+                </div>
+                <div class="card tname form-group">
+                    <label><b>Mentor ID:</b></label>
+                    <input type="number" class="inp" placeholder="Enter your ID" name="options" [(ngModel)]="newTask.options" ng-required="true">
+                </div>
+                <div class="card tname form-group">
+                    <label><b>Task Name:</b></label>
+                    <input type="text" class="inp" placeholder="TITLE" name="taskname" [(ngModel)]="newTask.taskname" ng-required="true">
+                </div>
+                <div class="card tname form-group">
+                    <label><b>End Date:</b></label>
+                    <input type="text" class="inp" placeholder="DD/MM/YYYY" name="enddate" [(ngModel)]="newTask.enddate" ng-required="true">
+                </div>
+                <div class="card tname form-group">
+                    <label><b>Task Details:</b></label>
+                    <textarea class="txt" name="taskdetails" [(ngModel)]="newTask.taskdetails" ng-required="true"></textarea>
+                </div>
+                <br>
+                <p style="margin-top: 220px;">
+                    <button type="button" (click)="check()" class="btn btn2">ADD TASK</button>
+                </p>
+            </form> 
+        </div>
+    </div>
+    </body>
+
+
+
+
+
+
+    

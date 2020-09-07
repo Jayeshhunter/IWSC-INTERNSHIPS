@@ -1,0 +1,34 @@
+<ngx-spinner></ngx-spinner>
+<body>
+  <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    <strong style="margin-left: 20px;">
+      If loggedIn previously: <button type="button" (click)="allog()" class="altbtn">Click Here</button>
+    </strong>
+  </div>
+    <div class="container-shadow"></div>
+    <div class="container">
+      <div class="wrap">
+        <div class="headings">
+          <h1 style="text-align: center;color: whitesmoke;">LOGIN</h1>
+        </div>
+        <div>
+          <form class="form">
+            <div class="form-group">
+              <label for="name">Username</label>
+              <input type="text" name="username" id="name"  [(ngModel)]="loginAdminData.username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" name="password" id="password" [(ngModel)]="loginAdminData.password" required>
+            </div>
+            <br><br>
+            <button  type="button" (click)="loginAdmin()" class="logbtn">Login</button>
+          </form>
+          <br>
+          <label  class="nyr">Not Yet Registered?</label>
+          <a routerLink="/adminsignup" class="btnsign">SIGNUP</a>
+        </div>
+      </div>
+    </div>
+  </body>

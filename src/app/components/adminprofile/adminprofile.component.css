@@ -1,0 +1,584 @@
+/*
+    DEMO STYLE
+*/
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #6190E8;  /* fallback for old browsers */
+}
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -5px;
+    min-height: 47rem;
+    z-index: 999;
+    background: rgb(255, 187, 0);
+    color: black;
+    transition: all 0.3s;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #0e0e0f;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: rgb(255, 187, 0);
+    background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+    content: '\e259';
+    display: block;
+    position: absolute;
+    right: 20px;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.6em;
+}
+a[aria-expanded="true"]::before {
+    content: '\e260';
+}
+
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+a.download {
+    background: #fff;
+    color: rgb(255, 187, 0);
+}
+a.article, a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE BOTH
+----------------------------------------------------- */
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.btn{
+    background-color: rgb(255, 187, 0);
+    border-color: rgb(255, 187, 0);
+}
+
+.navv{
+    background-color: white;
+    margin-top: -10px;
+    padding: 0%;
+    margin-left: 230px;
+    width: 1230px;
+}
+.navit{
+    margin-top: -31px;
+    margin-left: 55px;
+    margin-bottom: -5px;
+    font-size: 16px;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE DASH
+----------------------------------------------------- */
+.alert {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    margin-left: 230px;
+    width: 1230px;
+    margin-bottom: 40px;
+}
+.tname{
+    width: 70rem;
+    height: 3rem;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.atname{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE PROFILE
+----------------------------------------------------- */
+
+.pfile{
+    text-align: center;
+    border: 1px grey solid;
+    width: 700px;
+    margin-top: 70px;
+    margin-left: 300px;
+    background-color: rgb(255, 217, 0);
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE TASKS
+----------------------------------------------------- */
+
+.pfile{
+    text-align: center;
+    border: 1px grey solid;
+    width: 1000px;
+    margin-top: 70px;
+    margin-left: 150px;
+    background-color: rgb(255, 217, 0);
+    font-size: 20px;
+}
+.hrs{
+    border: 1px black solid;margin-left: 35px;width: 1420px;
+}
+.card1{
+    width: 80rem; min-height: 42rem;margin-left: 100px;margin-top: -40px;
+    background: #C9D6FF;
+}
+
+@media (min-width: 1000px){
+    body{
+        position: relative;
+        min-width: 100%;
+        height: 54.8rem;
+    }
+    .bbtn{
+        margin-left: 1200px;
+    }
+}
+
+.imgg{
+    margin-left: -20px;margin-top: -10px;
+}
+.nnaavv{
+    margin-top:-40px;
+}
+.navi{
+    margin-top:30px;
+    margin-bottom: -20px;
+}
+.navi1{
+    margin-top:20px;
+    margin-bottom: -20px;
+}
+.titles{
+    margin-top:30px;
+    margin-bottom: -20px;
+    width: 200px;
+}
+
+.btn{
+    background-color: rgb(255, 187, 0);
+    border-color: rgb(255, 187, 0);
+    font-size: 18px;
+    margin-left: -100px;
+}
+.btn1{
+    margin-left: 50px;
+    background-color: red;
+    border-color: red;
+}
+.bbtn{
+    margin-top:20px;
+    margin-bottom: -20px;
+}
+
+@media (max-width: 426px) {
+    body{
+        width: 425px;
+    }
+    .hrs{
+        margin-left: -20px;
+        width: 280px;
+    }
+    .card1{
+        width: 425px; min-height: 40rem;margin-left: 0px;margin-top: 10px;
+    }
+    .tname{
+    width: 17rem;
+    height: 3rem;
+    margin-left: -20px;
+    margin-top: 10px;
+    background-color: rgb(255, 217, 0);
+    }
+    .atname{
+        margin-top: 10px;
+        margin-left: 100px;
+    }
+    .pfile{
+        margin-left: 0px;
+        width: 422px;
+        font-size: 15px;
+    }
+    .btn{
+        font-size: 18px;
+        width: 350px;
+        margin-left: 0px;
+    }
+    .btn1{
+        width: 350px;
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+    .bbtn{
+        margin-left: -55px;
+        margin-left: 20px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 416px) {
+    body{
+        width: 415px;
+    }
+    .card1{
+        width: 415px; min-height: 40rem;margin-left: 0px;margin-top: 10px;
+    }
+    .pfile{
+        margin-left: 0px;
+        width: 412px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 406px) {
+    body{
+        width: 405px;
+    }
+    .card1{
+        width: 405px; min-height: 40rem;margin-left: 0px;margin-top: 10px;
+    }
+    .pfile{
+        margin-left: 0px;
+        width: 402px;
+        font-size: 15px;
+    }
+    .btn{
+        font-size: 18px;
+        width: 350px;
+        margin-left: 0px;
+    }
+    .btn1{
+        width: 350px;
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+    .bbtn{
+        margin-left: -55px;
+        margin-left: 10px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 396px) {
+    body{
+        width: 395px;
+    }
+    .card1{
+        width: 395px; min-height: 40rem;margin-left: 0px;margin-top: 10px;
+    }
+    .pfile{
+        margin-left: 0px;
+        width: 392px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 386px) {
+    body{
+        width: 385px;
+    }
+    .card1{
+        width: 385px; min-height: 40rem;margin-left: 0px;margin-top: 10px;
+    }
+    .pfile{
+        margin-left: 0px;
+        width: 382px;
+        font-size: 15px;
+    }
+    .btn{
+        font-size: 18px;
+        width: 350px;
+        margin-left: 0px;
+    }
+    .btn1{
+        width: 350px;
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+    .bbtn{
+        margin-left: -55px;
+        margin-left: 0px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 376px) {
+    body{
+        width: 375px;
+    }
+    .card1{
+        width: 375px; min-height: 40rem;margin-left: 0px;margin-top: 10px;
+    }
+    .pfile{
+        margin-left: 0px;
+        width: 372px;
+        font-size: 15px;
+    }
+    .btn{
+        font-size: 18px;
+        width: 300px;
+        margin-left: 0px;
+    }
+    .btn1{
+        width: 300px;
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+    .bbtn{
+        margin-left: -55px;
+        margin-left: 25px;
+        margin-bottom: 50px;
+    }
+}
+
+
+@media (max-width: 361px) {
+    body{
+        width: 360px;
+    }
+    .card1{
+        width: 360px; min-height: 40rem;margin-left: 0px;margin-top: 10px;
+    }
+    .pfile{
+        margin-left: 0px;
+        width: 358px;
+        font-size: 15px;
+    }
+    .bbtn{
+        margin-left: -55px;
+        margin-left: 15px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 351px) {
+    body{
+        width: 350px;
+    }
+    .card1{
+        width: 350px; min-height: 40rem;margin-left: 0px;margin-top: 10px;
+    }
+    .pfile{
+        margin-left: 0px;
+        width: 348px;
+        font-size: 15px;
+    }
+    .bbtn{
+        margin-left: -55px;
+        margin-left: 10px;
+        margin-bottom: 50px;
+    }
+}
+@media (max-width: 341px) {
+    body{
+        width: 340px;
+    }
+    .card1{
+        width: 340px; min-height: 40rem;margin-left: 0px;margin-top: 10px;
+    }
+    .pfile{
+        margin-left: 0px;
+        width: 338px;
+        font-size: 15px;
+    }
+    .bbtn{
+        margin-left: -55px;
+        margin-left: 5px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 331px) {
+    body{
+        width: 330px;
+    }
+    .card1{
+        width: 330px; min-height: 40rem;margin-left: 0px;margin-top: 10px;
+    }
+    .pfile{
+        margin-left: 0px;
+        width: 328px;
+        font-size: 15px;
+    }
+    .bbtn{
+        margin-left: -55px;
+        margin-left: 0px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 321px) {
+    body{
+        width: 320px;
+    }
+    .card1{
+        width: 320px; min-height: 40rem;margin-left: 0px;margin-top: 10px;
+    }
+    .pfile{
+        margin-left: 0px;
+        width: 318px;
+        font-size: 15px;
+    }
+    .btn{
+        font-size: 18px;
+        width: 250px;
+        margin-left: 0px;
+    }
+    .btn1{
+        margin-left: 0px;
+        width: 250px;
+        margin-bottom: 20px;
+    }
+    .bbtn{
+        margin-left: -55px;
+        margin-left: 20px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 311px) {
+    body{
+        width: 310px;
+    }
+    .card1{
+        width: 310px; min-height: 40rem;margin-left: 0px;margin-top: 10px;
+    }
+    .pfile{
+        margin-left: 0px;
+        width: 308px;
+        font-size: 15px;
+    }
+    .bbtn{
+        margin-left: -55px;
+        margin-left: 15px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 301px) {
+    body{
+        width: 300px;
+    }
+    .card1{
+        width: 300px; min-height: 40rem;margin-left: 0px;margin-top: 10px;
+    }
+    .pfile{
+        margin-left: 0px;
+        width: 298px;
+        font-size: 15px;
+    }
+    .bbtn{
+        margin-left: -55px;
+        margin-left: 10px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 291px) {
+    body{
+        width: 290px;
+    }
+    .card1{
+        width: 290px; min-height: 40rem;margin-left: 0px;margin-top: 10px;
+    }
+    .pfile{
+        margin-left: 0px;
+        width: 288px;
+        font-size: 15px;
+    }
+    .bbtn{
+        margin-left: -55px;
+        margin-left: 5px;
+        margin-bottom: 50px;
+    }
+}
+
+
+@media (max-width: 281px) {
+    body{
+        width: 280px;
+    }
+    .card1{
+        width: 280px; min-height: 40rem;margin-left: 0px;margin-top: 10px;
+    }
+    .pfile{
+        margin-left: 0px;
+        width: 278px;
+        font-size: 15px;
+    }
+    .bbtn{
+        margin-left: -55px;
+        margin-left: 0px;
+        margin-bottom: 50px;
+    }
+}

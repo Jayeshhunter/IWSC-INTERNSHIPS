@@ -1,0 +1,745 @@
+/*
+    DEMO STYLE
+*/
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #6190E8;  /* fallback for old browsers */
+    min-height: 875px;
+}
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -5px;
+    min-height: 47rem;
+    z-index: 999;
+    background: rgb(255, 187, 0);
+    color: black;
+    transition: all 0.3s;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #0e0e0f;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: rgb(255, 187, 0);
+    background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+    content: '\e259';
+    display: block;
+    position: absolute;
+    right: 20px;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.6em;
+}
+a[aria-expanded="true"]::before {
+    content: '\e260';
+}
+
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+a.download {
+    background: #fff;
+    color: rgb(255, 187, 0);
+}
+a.article, a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE BOTH
+----------------------------------------------------- */
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.btn{
+    background-color: rgb(255, 187, 0);
+    border-color: rgb(255, 187, 0);
+}
+
+.navv{
+    background-color: white;
+    margin-top: -10px;
+    padding: 0%;
+    margin-left: 230px;
+    width: 1230px;
+}
+.navit{
+    margin-top: -31px;
+    margin-left: 55px;
+    margin-bottom: -5px;
+    font-size: 16px;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE DASH
+----------------------------------------------------- */
+.alert {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    margin-left: 230px;
+    width: 1230px;
+    margin-bottom: 40px;
+}
+.tname{
+    width: 70rem;
+    height: 3rem;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.atname{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE PROFILE
+----------------------------------------------------- */
+
+.pfile{
+    text-align: center;
+    border: 1px grey solid;
+    width: 700px;
+    margin-top: 70px;
+    margin-left: 370px;
+    background-color: rgb(255, 217, 0);
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE TASKS
+----------------------------------------------------- */
+
+.pfile{
+    text-align: center;
+    border: 1px grey solid;
+    width: 1000px;
+    margin-top: 70px;
+    margin-left: 250px;
+    background-color: rgb(255, 217, 0);
+    font-size: 20px;
+}
+.hrs{
+    border: 1px black solid;margin-left: 35px;width: 1420px;
+}
+.card1{
+    width: 95em; min-height: 47.5rem;margin-left: 0px;margin-top: -70px;
+    background: #6190E8;
+}
+.date{
+    float: left;margin-left: 150px;
+}
+.com{
+    float: right;margin-left: 1100px;margin-top: -40px;
+}
+.btn{
+    background-color: rgb(255, 187, 0);
+    border-color: rgb(255, 187, 0);
+    font-size: 18px;
+}
+.btn1{
+    margin-left: 50px;
+    background-color: red;
+    border-color: red;
+}
+.compt{
+    width: 150px;padding-top: 10px;margin-left: 550px;background-color: rgb(57, 201, 57);border-color: rgb(57, 201, 57);
+}
+.stat{
+    width: 150px;padding-top: 10px;margin-left: 800px;background-color: red;margin-top: -48px;border-color: red;
+}
+.details{
+    margin-left: 40px;
+    width: 900px;
+}
+
+.imgg{
+    margin-left: -20px;margin-top: -10px;
+}
+.nnaavv{
+    margin-top:-40px;
+}
+.navi{
+    margin-top:30px;
+    margin-bottom: -20px;
+}
+.navi1{
+    margin-top:20px;
+    margin-bottom: -20px;
+}
+.titles{
+    margin-top:30px;
+    margin-bottom: -20px;
+    width: 200px;
+}
+
+
+.bbtn{
+    margin-top:20px;
+    margin-bottom: -20px;
+}
+
+@media (min-width: 1000px){
+    .bbtn{
+        margin-left: 1100px;
+    }
+}
+
+
+
+@media (max-width: 375px) {
+    .hrs{
+        margin-left: -20px;
+        width: 280px;
+    }
+    .card1{
+        width: 375px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
+    }
+    .tname{
+    width: 17rem;
+    height: 3rem;
+    margin-left: -20px;
+    margin-top: 10px;
+    background-color: rgb(255, 217, 0);
+    }
+    .atname{
+        margin-top: 10px;
+        margin-left: 100px;
+    }
+    .pfile{
+        padding-top: -50px;
+        margin-left: 5px;
+        width: 365px;
+        font-size: 15px;
+    }
+    .bbtn{
+        margin-left: -55px;
+        margin-bottom: 20px;
+    }
+    .btn{
+        font-size: 18px;
+        margin-left: 50px;
+    }
+    
+    .date{
+        font-size: 15px;
+        margin-top: 20px;
+        margin-left: 110px;
+        margin-bottom: 60px;
+    }
+    .com{
+        font-size: 15px;
+        margin-left: 110px;
+    }
+    .compt{
+        margin-left: 110px;background-color: rgb(57, 201, 57);border-color: rgb(57, 201, 57);width: 150px;
+    }
+    .stat{
+        margin-left: 110px;background-color: red;border-color: red;width: 150px;
+    }
+    .btn1{
+        margin-left: 50px;
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    .details{
+        margin-left: 10px;
+        width: 360px;
+    }
+}
+
+@media (max-width: 360px) {
+    .card1{
+        width: 360px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
+    }
+    .tname{
+    width: 17rem;
+    height: 3rem;
+    margin-left: -20px;
+    margin-top: 10px;
+    background-color: rgb(255, 217, 0);
+    }
+    .atname{
+        margin-top: 10px;
+        margin-left: 100px;
+    }
+    .pfile{
+        padding-top: -50px;
+        margin-left: 5px;
+        width: 350px;
+        font-size: 15px;
+    }
+    
+    .date{
+        font-size: 15px;
+        margin-top: 20px;
+        margin-left: 110px;
+        margin-bottom: 60px;
+    }
+    .com{
+        font-size: 15px;
+        margin-left: 110px;
+    }
+    .compt{
+        margin-left: 110px;background-color: rgb(57, 201, 57);border-color: rgb(57, 201, 57);width: 150px;
+    }
+    .stat{
+        margin-left: 110px;background-color: red;border-color: red;width: 150px;
+    }
+    .btn1{
+        margin-left: 50px;
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    .btn.btn1{
+        width: 350px;
+    }
+    .details{
+        margin-left: 10px;
+        width: 360px;
+    }
+    .bbtn{
+        margin-left: -60px;
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (max-width: 360px) {
+    .card1{
+        width: 360px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
+    }
+    .tname{
+    width: 17rem;
+    height: 3rem;
+    margin-left: -20px;
+    margin-top: 10px;
+    background-color: rgb(255, 217, 0);
+    }
+    .atname{
+        margin-top: 10px;
+        margin-left: 100px;
+    }
+    .pfile{
+        padding-top: -50px;
+        margin-left: 5px;
+        width: 350px;
+        font-size: 15px;
+    }
+    
+    .date{
+        font-size: 15px;
+        margin-top: 20px;
+        margin-left: 110px;
+        margin-bottom: 60px;
+    }
+    .com{
+        font-size: 15px;
+        margin-left: 110px;
+    }
+    .compt{
+        margin-left: 110px;background-color: rgb(57, 201, 57);border-color: rgb(57, 201, 57);width: 150px;
+    }
+    .stat{
+        margin-left: 110px;background-color: red;border-color: red;width: 150px;
+    }
+    .btn1{
+        margin-left: 50px;
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    .btn.btn1{
+        width: 350px;
+    }
+    .details{
+        margin-left: 10px;
+        width: 340px;
+    }
+    .bbtn{
+        margin-left: -60px;
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (max-width: 350px) {
+    .card1{
+        width: 350px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
+    }
+    .pfile{
+        padding-top: -50px;
+        margin-left: 5px;
+        width: 340px;
+        font-size: 15px;
+    }
+    .btn1{
+        margin-left: 50px;
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    .btn.btn1{
+        width: 340px;
+    }
+    .details{
+        margin-left: 5px;
+        width: 330px;
+    }
+    .bbtn{
+        margin-left: -60px;
+        margin-bottom: 20px;
+    }
+    .date{
+        margin-left: 100px;
+    }
+    .com{
+        font-size: 15px;
+        margin-left: 100px;
+    }
+    .compt{
+        margin-left: 100px;background-color: rgb(57, 201, 57);border-color: rgb(57, 201, 57);width: 150px;
+    }
+    .stat{
+        margin-left: 100px;background-color: red;border-color: red;width: 150px;
+    }
+}
+
+
+@media (max-width: 340px) {
+    .card1{
+        width: 340px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
+    }
+    .pfile{
+        padding-top: -50px;
+        margin-left: 5px;
+        width: 330px;
+        font-size: 15px;
+    }
+    .btn1{
+        margin-left: 50px;
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    .btn.btn1{
+        width: 330px;
+    }
+    .details{
+        margin-left: 5px;
+        width: 320px;
+    }
+    .bbtn{
+        margin-left: -60px;
+        margin-bottom: 20px;
+    }
+    .date{
+        margin-left: 90px;
+    }
+    .com{
+        font-size: 15px;
+        margin-left: 90px;
+    }
+    .compt{
+        margin-left: 90px;background-color: rgb(57, 201, 57);border-color: rgb(57, 201, 57);width: 150px;
+    }
+    .stat{
+        margin-left: 90px;background-color: red;border-color: red;width: 150px;
+    }
+}
+
+
+@media (max-width: 330px) {
+    .card1{
+        width: 330px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
+    }
+    .pfile{
+        padding-top: -50px;
+        margin-left: 5px;
+        width: 320px;
+        font-size: 15px;
+    }
+    .btn1{
+        margin-left: 50px;
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    .btn.btn1{
+        width: 320px;
+    }
+    .details{
+        margin-left: 5px;
+        width: 310px;
+    }
+    .bbtn{
+        margin-left: -60px;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 320px) {
+    .hrs{
+        margin-left: -20px;
+        width: 280px;
+    }
+    .card1{
+        width: 20rem; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
+    }
+    .tname{
+    width: 17rem;
+    height: 3rem;
+    margin-left: -20px;
+    margin-top: 10px;
+    background-color: rgb(255, 217, 0);
+    }
+    .atname{
+        margin-top: 10px;
+        margin-left: 100px;
+    }
+    .pfile{
+        padding-top: -50px;
+        margin-left: 5px;
+        width: 305px;
+        font-size: 15px;
+    }
+    .bbtn{
+        margin-left: -55px;
+        margin-bottom: 20px;
+    }
+    .btn{
+        font-size: 18px;
+        margin-left: 50px;
+        width: 300px;
+    }
+    .btn.btn1{
+        width: 300px;
+    }
+    .date{
+        font-size: 15px;
+        margin-top: 20px;
+        margin-left: 80px;
+        margin-bottom: 60px;
+    }
+    .com{
+        font-size: 15px;
+        margin-left: 90px;
+    }
+    .compt{
+        margin-left: 80px;background-color: rgb(57, 201, 57);border-color: rgb(57, 201, 57);width: 150px;
+    }
+    .stat{
+        margin-left: 80px;background-color: red;border-color: red;width: 150px;
+    }
+    .btn1{
+        margin-left: 50px;
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    .details{
+        margin-left: 10px;
+        width: 280px;
+    }
+}
+
+
+@media (max-width: 310px) {
+    .card1{
+        width: 310px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
+    }
+    .pfile{
+        padding-top: -50px;
+        margin-left: 5px;
+        width: 300px;
+        font-size: 15px;
+    }
+    .btn1{
+        margin-left: 50px;
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    .btn.btn1{
+        width: 300px;
+    }
+    .details{
+        margin-left: 5px;
+        width: 290px;
+    }
+    .bbtn{
+        margin-left: -60px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 300px) {
+    .card1{
+        width: 300px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
+    }
+    .pfile{
+        padding-top: -50px;
+        margin-left: 5px;
+        width: 290px;
+        font-size: 15px;
+    }
+    .btn1{
+        margin-left: 50px;
+        width: 290px;
+        margin-bottom: 20px;
+    }
+    button.btn{
+        width: 290px;
+    }
+    .btn.btn1{
+        width: 290px;
+    }
+    .details{
+        margin-left: 5px;
+        width: 280px;
+    }
+}
+
+
+@media (max-width: 290px) {
+    .card1{
+        width: 290px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
+    }
+    .pfile{
+        padding-top: -50px;
+        margin-left: 5px;
+        width: 280px;
+        font-size: 15px;
+    }
+    .btn1{
+        margin-left: 50px;
+        width: 280px;
+        margin-bottom: 20px;
+    }
+    .btn.btn1{
+        width: 280px;
+    }
+    .details{
+        margin-left: 5px;
+        width: 270px;
+    }
+    .date{
+        margin-left: 70px;
+    }
+    .com{
+        font-size: 15px;
+        margin-left: 80px;
+    }
+    .compt{
+        margin-left: 70px;background-color: rgb(57, 201, 57);border-color: rgb(57, 201, 57);width: 150px;
+    }
+    .stat{
+        margin-left: 70px;background-color: red;border-color: red;width: 150px;
+    }
+    button.btn{
+        width: 280px;
+    }
+}
+
+
+@media (max-width: 280px) {
+    .card1{
+        width: 280px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
+    }
+    .pfile{
+        padding-top: -50px;
+        margin-left: 5px;
+        width: 270px;
+        font-size: 15px;
+    }
+    .btn1{
+        margin-left: 50px;
+        width: 270px;
+        margin-bottom: 20px;
+    }
+    .btn.btn1{
+        width: 270px;
+    }
+    .details{
+        margin-left: 5px;
+        width: 270px;
+    }
+    .date{
+        margin-left: 70px;
+    }
+    .com{
+        font-size: 15px;
+        margin-left: 80px;
+    }
+    .compt{
+        margin-left: 70px;background-color: rgb(57, 201, 57);border-color: rgb(57, 201, 57);width: 150px;
+    }
+    .stat{
+        margin-left: 70px;background-color: red;border-color: red;width: 150px;
+    }
+    button.btn{
+        width: 270px;
+    }
+}

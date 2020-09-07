@@ -1,0 +1,42 @@
+<body id="bo">
+    
+    <div class="wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light nnaavv" style="background-color: #F0F8FF;">
+        <a class="navbar-brand navi" routerLink="/"><img src="../../../assets/logo.png"width="80" height="80"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="margin-top:40px;">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav bbtn">
+            <button style="margin-top: 5px;" class="btn btn1" (click)="loggout()">LOGOUT</button>
+          </div>
+        </div>
+      </nav>
+        <br><br><br>
+        <div class="card card1">
+            <h1 style="text-align: center;margin-top: 20px;">MY PROFILE</h1>
+            <br>
+            <div class="pfile">
+              <br><br>
+              <p><b>ID: {{ureg}} </b></p>
+              <br>
+              <p><b>Username: {{uname}} </b></p>
+              <br>
+              <p><b>Email: {{uemail}} </b></p>
+              <br><br>
+            </div>
+      </div>
+    </div>
+
+    <div class="overlay"></div>
+
+<!--
+<h1>Profiles</h1>
+
+<ul>
+  <li *ngFor="let user of users">
+    <p class="name">{{ user.username }}</p>
+    <p class="name">{{ user.email }}</p>
+    <p class="name">{{ user.regno }}</p>
+  </li>
+</ul>-->

@@ -1,0 +1,45 @@
+<ngx-spinner></ngx-spinner>
+<body>
+  <div class="container-shadow"></div>
+  <div class="container" style="height: 830px">
+    <div class="wrap" style="margin-top: -70px;">
+      <div class="headings">
+        <h1 style="text-align: center;color: whitesmoke;">SIGNUP</h1>
+      </div>
+      <div>
+        <form class="form" style="margin-top: -60px;">
+          <div class="form-group">
+            <label >Registration Number</label>
+            <input type="number" name="regno" [(ngModel)]="registerUserData.regno" id="regno" ngModel required = "true">
+          </div>
+          <div class="form-group">
+            <label >Username</label>
+            <input type="text" name="username" [(ngModel)]="registerUserData.username" id="name" ngModel required = "true">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" [(ngModel)]="registerUserData.password" id="password" ngModel required = "true">
+          </div>
+          <div class="form-group">
+            <label for="profs">Please Select a mentor:</label>
+            <br>
+            <select name="profs" id="profs" [(ngModel)]="registerUserData.options" ngModel required = "true">
+              <option style="font-size: 15px;color: black;" value="{{admin.regno}}" name="options" *ngFor="let admin of admins">{{admin.regno}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" id="email" [(ngModel)]="registerUserData.email" ngModel [email]="true" required = "true">
+          </div>
+          <button type="button" (click)="check()" class="btnsign">SIGNUP</button>
+        </form>
+        <label class="nyr">Already Registered Account?</label>
+        <button type="button" routerLink="/login" class="log">Login</button>
+      </div>
+      <br>
+    </div><br><br>
+  </div>
+
+</body>
+
+

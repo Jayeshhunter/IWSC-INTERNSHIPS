@@ -1,0 +1,51 @@
+<body id="bo">
+    <div class="wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light nnaavv" style="background-color: #F0F8FF;">
+            <a class="navbar-brand navi" routerLink="/"><img src="../../../assets/logo.png"width="80" height="80"/></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="margin-top:40px;">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav bbtn">
+                <button style="margin-top: 5px;" class="btn" routerLink="/profile">PROFILE</button>
+                <button style="margin-top: 5px;" class="btn btn1" (click)="loggout()">LOGOUT</button>
+              </div>
+            </div>
+          </nav>
+        <br><br><br>
+        <div class="text-center">
+          <circle-progress *ngIf="loader"
+          [percent]="100"
+          [radius]="50"
+          [outerStrokeWidth]="8"
+          [innerStrokeWidth]="4"
+          outerStrokeColor="red"
+          innerStrokeColor="yellow"
+          [animation]="true"
+          [animationDuration]="10000"
+          ></circle-progress>
+        </div>
+        <div class="card card1" *ngIf="!loader">
+            <h1 class="hname">YOUR INTERNSHIP TASKS</h1>
+            <div style="margin-top: 70px;">
+              <div *ngIf="tasks.length === 0">
+                <h3 class="hname">No Tasks assigned for you!!!</h3>
+              </div>
+              <div *ngIf="tasks.length > 0">
+                <ul *ngFor="let task of tasks">
+                    <div *ngIf="task.complete==='Incomplete'">
+                        <li class="card tname fail"><a class="atname" routerLink="/list/{{task._id}}"><b style="text-transform:capitalize;">{{task.taskname}}</b></a></li>
+                    </div>
+                </ul>
+                <br>
+                <ul *ngFor="let task of tasks">
+                  <div *ngIf="task.complete==='Completed'">
+                      <li class="card tname success"><a class="atname" routerLink="/list/{{task._id}}"><b style="text-transform:capitalize;">{{task.taskname}}</b></a></li>
+                  </div>
+              </ul>
+                <br><br>
+              </div>
+            </div>
+        </div>
+    </div>
+    </body>

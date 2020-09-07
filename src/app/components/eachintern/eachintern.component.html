@@ -1,0 +1,42 @@
+<body id="bo">
+    <div class="wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light nnaavv" style="background-color: #F0F8FF;">
+            <a class="navbar-brand navi" routerLink="/"><img src="../../../assets/logo.png"width="80" height="80"/></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="margin-top:40px;">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav bbtn">
+                <button style="margin-top: 5px;" class="btn" routerLink="/adminprofile">PROFILE</button>
+                <button style="margin-top: 5px;" class="btn btn1" (click)="loggout()">LOGOUT</button>
+              </div>
+            </div>
+          </nav>
+        <br><br><br>
+        <div class="text-center">
+          <circle-progress *ngIf="loader"
+          [percent]="100"
+          [radius]="50"
+          [outerStrokeWidth]="8"
+          [innerStrokeWidth]="4"
+          outerStrokeColor="red"
+          innerStrokeColor="yellow"
+          [animation]="true"
+          [animationDuration]="10000"
+          ></circle-progress>
+        </div>
+        <div class="card card1" *ngIf="!loader">
+            <h1 class="hname">INTER'S TASKS</h1>
+            <div *ngIf="users1.length === 0">
+              <h3 class="hname">No tasks registerd for this user!!!</h3>
+            </div>
+            <div style="margin-top: 70px;">
+                <ul>
+                    <li class="card tname"*ngFor="let user of users1"><a class="atname" (click)="eacht(user)"><b class="at1">{{user.taskname}}</b><b class="at2"> {{user.complete}}</b></a></li>
+                    <a class=" btn btn2" routerLink="/addtask">Add New Task</a>
+                </ul>
+                <br><br>
+            </div>
+        </div>
+    </div>
+    </body>
