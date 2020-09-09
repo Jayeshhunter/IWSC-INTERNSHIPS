@@ -255,8 +255,145 @@ a.article, a.article:hover {
 }
 
 
+@media (max-width: 426px) {
+    .hrs{
+        margin-left: -20px;
+        width: 280px;
+    }
+    .card1{
+        width: 425px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
+    }
+    .tname{
+    width: 17rem;
+    height: 3rem;
+    margin-left: -20px;
+    margin-top: 10px;
+    background-color: rgb(255, 217, 0);
+    }
+    .atname{
+        margin-top: 10px;
+        margin-left: 100px;
+    }
+    .pfile{
+        padding-top: -50px;
+        margin-left: 0px;
+        width: 425px;
+        font-size: 15px;
+    }
+    .bbtn{
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+    .btn{
+        font-size: 18px;
+        margin-left: 50px;
+        width: 300px;
+    }
+    
+    .date{
+        font-size: 15px;
+        margin-top: 20px;
+        margin-left: 130px;
+        margin-bottom: 60px;
+    }
+    .com{
+        font-size: 15px;
+        margin-left: 130px;
+    }
+    .compt{
+        margin-left: 130px;background-color: rgb(57, 201, 57);border-color: rgb(57, 201, 57);width: 150px;
+    }
+    .stat{
+        margin-left: 130px;background-color: red;border-color: red;width: 150px;
+    }
+    .btn1{
+        margin-left: 50px;
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    .details{
+        margin-left: 10px;
+        width: 360px;
+    }
+}
 
-@media (max-width: 375px) {
+@media (max-width: 416px) {
+    .card1{
+        width: 415px;
+    }
+    .pfile{
+        padding-top: -50px;
+        margin-left: -1px;
+        width: 415px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 406px) {
+    .card1{
+        width: 405px;
+    }
+    .pfile{
+        padding-top: -50px;
+        margin-left: -1px;
+        width: 405px;
+        font-size: 15px;
+    }
+    .bbtn{
+        margin-left: -10px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 396px) {
+    .card1{
+        width: 395px;
+    }
+    .pfile{
+        padding-top: -50px;
+        margin-left: -1px;
+        width: 395px;
+        font-size: 15px;
+    }
+    .bbtn{
+        margin-left: -10px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 386px) {
+    .card1{
+        width: 385px;
+    }
+    .pfile{
+        padding-top: -50px;
+        margin-left: -1px;
+        width: 385px;
+        font-size: 15px;
+    }
+    .bbtn{
+        margin-left: -20px;
+        margin-bottom: 20px;
+    }
+    .date{
+        font-size: 15px;
+        margin-top: 20px;
+        margin-left: 110px;
+        margin-bottom: 60px;
+    }
+    .com{
+        font-size: 15px;
+        margin-left: 110px;
+    }
+    .compt{
+        margin-left: 110px;background-color: rgb(57, 201, 57);border-color: rgb(57, 201, 57);width: 150px;
+    }
+    .stat{
+        margin-left: 110px;background-color: red;border-color: red;width: 150px;
+    }
+}
+
+@media (max-width: 376px) {
     .hrs{
         margin-left: -20px;
         width: 280px;
@@ -282,10 +419,11 @@ a.article, a.article:hover {
         font-size: 15px;
     }
     .bbtn{
-        margin-left: -55px;
+        margin-left: -30px;
         margin-bottom: 20px;
     }
     .btn{
+        width: 300px;
         font-size: 18px;
         margin-left: 50px;
     }
@@ -317,7 +455,7 @@ a.article, a.article:hover {
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 366px) {
     .card1{
         width: 360px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
     }
@@ -355,26 +493,10 @@ a.article, a.article:hover {
     .stat{
         margin-left: 110px;background-color: red;border-color: red;width: 150px;
     }
-    .btn1{
-        margin-left: 50px;
-        width: 300px;
-        margin-bottom: 20px;
-    }
-    .btn.btn1{
-        width: 350px;
-    }
-    .details{
-        margin-left: 10px;
-        width: 360px;
-    }
-    .bbtn{
-        margin-left: -60px;
-        margin-bottom: 20px;
-    }
+    
 }
 
-
-@media (max-width: 360px) {
+@media (max-width: 361px) {
     .card1{
         width: 360px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
     }
@@ -412,26 +534,10 @@ a.article, a.article:hover {
     .stat{
         margin-left: 110px;background-color: red;border-color: red;width: 150px;
     }
-    .btn1{
-        margin-left: 50px;
-        width: 300px;
-        margin-bottom: 20px;
-    }
-    .btn.btn1{
-        width: 350px;
-    }
-    .details{
-        margin-left: 10px;
-        width: 340px;
-    }
-    .bbtn{
-        margin-left: -60px;
-        margin-bottom: 20px;
-    }
 }
 
 
-@media (max-width: 350px) {
+@media (max-width: 351px) {
     .card1{
         width: 350px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
     }
@@ -441,28 +547,9 @@ a.article, a.article:hover {
         width: 340px;
         font-size: 15px;
     }
-    .btn1{
-        margin-left: 50px;
-        width: 300px;
-        margin-bottom: 20px;
-    }
-    .btn.btn1{
-        width: 340px;
-    }
-    .details{
-        margin-left: 5px;
-        width: 330px;
-    }
     .bbtn{
-        margin-left: -60px;
+        margin-left: -40px;
         margin-bottom: 20px;
-    }
-    .date{
-        margin-left: 100px;
-    }
-    .com{
-        font-size: 15px;
-        margin-left: 100px;
     }
     .compt{
         margin-left: 100px;background-color: rgb(57, 201, 57);border-color: rgb(57, 201, 57);width: 150px;
@@ -473,7 +560,7 @@ a.article, a.article:hover {
 }
 
 
-@media (max-width: 340px) {
+@media (max-width: 341px) {
     .card1{
         width: 340px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
     }
@@ -483,28 +570,9 @@ a.article, a.article:hover {
         width: 330px;
         font-size: 15px;
     }
-    .btn1{
-        margin-left: 50px;
-        width: 300px;
-        margin-bottom: 20px;
-    }
-    .btn.btn1{
-        width: 330px;
-    }
-    .details{
-        margin-left: 5px;
-        width: 320px;
-    }
     .bbtn{
-        margin-left: -60px;
+        margin-left: -50px;
         margin-bottom: 20px;
-    }
-    .date{
-        margin-left: 90px;
-    }
-    .com{
-        font-size: 15px;
-        margin-left: 90px;
     }
     .compt{
         margin-left: 90px;background-color: rgb(57, 201, 57);border-color: rgb(57, 201, 57);width: 150px;
@@ -515,7 +583,7 @@ a.article, a.article:hover {
 }
 
 
-@media (max-width: 330px) {
+@media (max-width: 331px) {
     .card1{
         width: 330px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
     }
@@ -525,89 +593,37 @@ a.article, a.article:hover {
         width: 320px;
         font-size: 15px;
     }
-    .btn1{
-        margin-left: 50px;
-        width: 300px;
-        margin-bottom: 20px;
-    }
-    .btn.btn1{
-        width: 320px;
-    }
     .details{
         margin-left: 5px;
         width: 310px;
+    }
+    .bbtn{
+        margin-left: -50px;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 321px) {
+    .card1{
+        width: 320px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
+    }
+    .pfile{
+        padding-top: -50px;
+        margin-left: 5px;
+        width: 310px;
+        font-size: 15px;
+    }
+    .details{
+        margin-left: 5px;
+        width: 300px;
     }
     .bbtn{
         margin-left: -60px;
         margin-bottom: 20px;
     }
 }
-@media (max-width: 320px) {
-    .hrs{
-        margin-left: -20px;
-        width: 280px;
-    }
-    .card1{
-        width: 20rem; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
-    }
-    .tname{
-    width: 17rem;
-    height: 3rem;
-    margin-left: -20px;
-    margin-top: 10px;
-    background-color: rgb(255, 217, 0);
-    }
-    .atname{
-        margin-top: 10px;
-        margin-left: 100px;
-    }
-    .pfile{
-        padding-top: -50px;
-        margin-left: 5px;
-        width: 305px;
-        font-size: 15px;
-    }
-    .bbtn{
-        margin-left: -55px;
-        margin-bottom: 20px;
-    }
-    .btn{
-        font-size: 18px;
-        margin-left: 50px;
-        width: 300px;
-    }
-    .btn.btn1{
-        width: 300px;
-    }
-    .date{
-        font-size: 15px;
-        margin-top: 20px;
-        margin-left: 80px;
-        margin-bottom: 60px;
-    }
-    .com{
-        font-size: 15px;
-        margin-left: 90px;
-    }
-    .compt{
-        margin-left: 80px;background-color: rgb(57, 201, 57);border-color: rgb(57, 201, 57);width: 150px;
-    }
-    .stat{
-        margin-left: 80px;background-color: red;border-color: red;width: 150px;
-    }
-    .btn1{
-        margin-left: 50px;
-        width: 300px;
-        margin-bottom: 20px;
-    }
-    .details{
-        margin-left: 10px;
-        width: 280px;
-    }
-}
 
 
-@media (max-width: 310px) {
+@media (max-width: 311px) {
     .card1{
         width: 310px; min-height: 36.8rem;margin-left: 0px;margin-top: -70px;
     }

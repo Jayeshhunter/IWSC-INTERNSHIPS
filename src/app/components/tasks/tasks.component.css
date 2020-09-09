@@ -238,8 +238,157 @@ a.article, a.article:hover {
     }
 }
 
+@media (max-width: 426px) {
+    .nnaavv{
+        width: 426px;
+    }
+    .wrapper{
+       width: 424px;
+    }
+    .hrs{
+        margin-left: -20px;
+        width: 280px;
+    }
+    .card1{
+        width: 424px; min-height: 40rem;margin-left: 0px;margin-top: -70px;
+    }
+    .tname{
+    width: 17rem;
+    height: 3rem;
+    margin-left: -20px;
+    margin-top: 10px;
+    background-color: rgb(255, 217, 0);
+    }
+    .atname{
+        margin-top: 10px;
+        margin-left: 100px;
+    }
+    .pfile{
+        margin-top: -50px;
+        margin-left: 0px;
+        width: 424px;
+        font-size: 15px;
+    }
+    .bbtn{
+        margin-left: -55px;
+        margin-bottom: 20px;
+    }
+    .btn{
+        font-size: 18px;
+        margin-left: 80px;
+        width: 350px;
+    }
+    .btn1{
+        margin-left: 80px;
+        width: 350px;
+        margin-bottom: 20px;
+    }
+    .date{
+        font-size: 15px;
+        margin-top: 20px;
+        margin-left: 80px;
+        margin-bottom: 60px;
+    }
+    .com{
+        font-size: 15px;
+        margin-left: 90px;
+    }
+    .details{
+        margin-left: 10px;
+        width: 360px;
+    }
+}
 
-@media (max-width: 375px) {
+@media (max-width: 416px){
+    .wrapper{
+        width: 416px;
+     }
+    .nnaavv{
+        width: 416px;
+    }
+    .card1{
+        width: 414px; min-height: 40rem;margin-left: 0px;margin-top: -70px;
+    }
+    .pfile{
+        margin-top: -50px;
+        margin-left: 0px;
+        width: 414px;
+        font-size: 15px;
+    }
+    .date{
+        margin-left: 120px;
+    }
+}
+
+@media (max-width: 406px){
+    .wrapper{
+        width: 406px;
+     }
+    .nnaavv{
+        width: 406px;
+    }
+    .card1{
+        width: 404px;
+    }
+    .pfile{
+        margin-top: -50px;
+        width: 404px;
+        font-size: 15px;
+    }
+    .bbtn{
+        margin-left: -70px;
+        margin-bottom: 20px;
+    }
+    .date{
+        margin-left: 120px;
+    }
+}
+
+@media (max-width: 396px){
+    .wrapper{
+        width: 396px;
+     }
+    .nnaavv{
+        width: 396px;
+    }
+    .card1{
+        width: 394px;
+    }
+    .pfile{
+        width: 394px;
+    }
+    .bbtn{
+        margin-left: -70px;
+        margin-bottom: 20px;
+    }
+    .date{
+        margin-left: 120px;
+    }
+}
+
+@media (max-width: 386px){
+    .wrapper{
+        width: 386px;
+     }
+    .nnaavv{
+        width: 386px;
+    }
+    .card1{
+        width: 384px;
+    }
+    .pfile{
+        width: 384px;
+    }
+    .bbtn{
+        margin-left: -80px;
+        margin-bottom: 20px;
+    }
+    .date{
+        margin-left: 120px;
+    }
+}
+
+@media (max-width: 376px) {
     .wrapper{
        min-width: 320px;
     }
@@ -296,7 +445,7 @@ a.article, a.article:hover {
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 321px) {
     .wrapper{
        min-width: 320px;
     }
@@ -354,7 +503,7 @@ a.article, a.article:hover {
 }
 
 
-@media (max-width: 310px) {
+@media (max-width: 311px) {
     .card1{
         width: 19rem; min-height: 40rem;margin-left: 0px;margin-top: -70px;
     }
@@ -372,7 +521,7 @@ a.article, a.article:hover {
 }
 
 
-@media (max-width: 300px) {
+@media (max-width: 301px) {
     .card1{
         width: 19rem; min-height: 40rem;margin-left: 0px;margin-top: -70px;
     }
@@ -385,7 +534,7 @@ a.article, a.article:hover {
     }
 }
 
-@media (max-width: 290px) {
+@media (max-width: 291px) {
     .card1{
         width: 18.5rem; min-height: 40rem;margin-left: 0px;margin-top: -70px;
     }
@@ -402,7 +551,7 @@ a.article, a.article:hover {
     }
 }
 
-@media (max-width: 280px) {
+@media (max-width: 281px) {
     .wrapper{
         width: 280px;
     }
