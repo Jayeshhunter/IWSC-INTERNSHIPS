@@ -46,11 +46,11 @@
         <div class="card1" *ngIf="!loader">
           <div style="margin-top: 70px;">
             <div *ngIf="tasks.length === 0">
-              <h1 style="text-align: center;" class="font-mono dashhead">NO TASKS ASSIGNED FOR YOU</h1>
+              <h1 style="text-align: center;" class="text-center text-3xl leading-9 font-extrabold text-gray-900">NO TASKS ASSIGNED FOR YOU</h1>
               <br><br><br><br><br><br><br>
             </div>
             <div *ngIf="tasks.length > 0">
-              <h1 style="text-align: center;" class="font-mono dashhead">YOUR TASKS</h1>
+              <h1 style="text-align: center;" class="text-center text-3xl leading-9 font-extrabold text-gray-900">YOUR TASKS</h1>
               <br>
               <ul *ngFor="let task of tasks">
                   <div *ngIf="task.complete==='Incomplete'">
@@ -60,7 +60,7 @@
                               <a class="hover:no-underline" routerLink="/list/{{task._id}}">
                               <div class="h-full border-2 border-gray-300 rounded-lg overflow-hidden bg-red-600 hover:border-gray-900">
                                 <div class="p-4">                               
-                                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-center"><b style="text-transform:capitalize;">{{task.taskname}}</b></h1>
+                                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-center font-mono"><b style="text-transform:capitalize;">{{task.taskname}}</b></h1>
                                 </div>
                               </div>
                             </a>
@@ -79,7 +79,7 @@
                           <a class="hover:no-underline" routerLink="/list/{{task._id}}">
                           <div class="h-full border-2 border-gray-300 rounded-lg overflow-hidden bg-green-400 hover:border-gray-900">
                             <div class="p-4">
-                              <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-center" style="font-family: cursive;"><b style="text-transform:capitalize;">{{task.taskname}}</b></h1>
+                              <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-center font-mono "><b style="text-transform:capitalize;">{{task.taskname}}</b></h1>
                             </div>
                           </div>
                         </a>

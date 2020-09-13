@@ -46,13 +46,13 @@
         <div class="card1" *ngIf="!loader">
           <div style="margin-top: 70px;">
             <div *ngIf="users1.length === 0">
-              <h1 style="text-align: center;" class="font-mono dashhead">NO TASKS ASSIGNED FOT THIS USER</h1>
+              <h1 style="text-align: center;" class="text-center text-3xl leading-9 font-extrabold text-gray-900">NO TASKS ASSIGNED FOT THIS USER</h1>
               <br>
               <div style="text-align: center;"><button routerLink="/addtask" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-xl">ADD NEW TASK</button></div>
               <br><br><br><br><br>
             </div>
             <div *ngIf="users1.length > 0">
-              <h1 style="text-align: center;" class="font-mono dashhead">INTER'S TASKS</h1>
+              <h1 style="text-align: center;" class="text-center text-3xl leading-9 font-extrabold text-gray-900">INTER'S TASKS</h1>
               <br>
               <ul *ngFor="let user of users1">
                 <div *ngIf="user.complete==='Incomplete'">
@@ -62,7 +62,7 @@
                         <a (click)="eacht(user)">
                           <div class="h-full border-2 border-gray-500 rounded-lg overflow-hidden bg-red-600 hover:border-gray-900">
                             <div class="p-4">
-                              <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-center"><b style="text-transform:capitalize;">{{user.taskname}}</b></h1>
+                              <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-center font-mono"><b style="text-transform:capitalize;">{{user.taskname}}</b></h1>
                             </div>
                           </div>
                         </a>
@@ -80,7 +80,7 @@
                         <a (click)="eacht(user)">
                           <div class="h-full border-2 border-gray-500 rounded-lg overflow-hidden bg-green-400 hover:border-gray-900">
                             <div class="p-4">
-                              <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-center" style="font-family: cursive;"><b style="text-transform:capitalize;">{{user.taskname}}</b></h1>
+                              <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-center font-mono"><b style="text-transform:capitalize;">{{user.taskname}}</b></h1>
                             </div>
                           </div>
                         </a>

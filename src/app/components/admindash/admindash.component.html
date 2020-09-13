@@ -50,7 +50,7 @@
               <br><br><br><br><br><br><br><br>
             </div>
             <div *ngIf="users1.length > 0">
-              <h1 style="text-align: center;" class="font-mono dashhead">LIST OF INTERNS</h1>
+              <h1 style="text-align: center;" class="text-center text-3xl leading-9 font-extrabold text-gray-900">LIST OF INTERNS</h1>
               <br>
               <ul *ngFor="let user of users1">
                   <li>
@@ -59,7 +59,7 @@
                       <a class="atname" (click)="eachint(user)">
                           <div class="h-full border-2 border-gray-500 rounded-lg overflow-hidden bg-blue-300 hover:border-gray-900">
                             <div class="p-4">
-                              <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-center"><b style="text-transform:capitalize;">{{user.username}}</b></h1>
+                              <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-center font-mono"><b style="text-transform:capitalize;">{{user.username}}</b></h1>
                             </div>
                           </div>
                         </a>
