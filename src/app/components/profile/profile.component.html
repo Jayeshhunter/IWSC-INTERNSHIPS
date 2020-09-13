@@ -1,45 +1,82 @@
-<body id="bo">
-    
-    <div class="wrapper">
-      <nav class="navbar navbar-expand-lg navbar-light nnaavv" style="background-color: #F0F8FF;">
-        <a class="navbar-brand navi" routerLink="/"><img src="../../../assets/logo.png"width="80" height="80"/></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="margin-top:40px;">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav bbtn">
-            <button style="margin-top: 5px;" class="btn" (click)="dash()">DASHBOARD</button>
-            <button style="margin-top: 5px;" class="btn btn1" (click)="loggout()">LOGOUT</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body class="bg-gray-100">
+  <nav class="flex items-center justify-between flex-wrap bg-gray-900 p-6 headclass">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <img class="fill-current h-15 w-15 mr-5" width="54" height="54" viewBox="0 0 54 54" src="../../../assets/logo.png" style="margin-top: 5px;">
+        <span class="font-semibold text-xl tracking-tight">Inception Wave</span>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-sm lg:flex-grow">
+        <a routerLink="/" class="block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 tp">
+            HOME
+        </a>
+        <a (click)="dash()" class="block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 tp" style="color: #B2F5EA;">
+            DASHBOARD
+        </a>
+        </div>
+        <div>
+        <a (click)="loggout()" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent lg:mt-0 tp">Log Out</a>
+        </div>
+    </div>
+</nav> 
+    <br><br><br><br>
+    <div class="ddashh font-mono">
+      <p class="text-gray-700 body-font">
+        <div class="p-9 md:w-1/2">
+          <div class="h-full border-2 border-gray-300 rounded-lg overflow-hidden bg-gray-200 hover:border-gray-400">
+            <div class="p-4">
+              <h1 class="title-font text-lg font-semibold text-gray-900 mb-4 text-center text-xl"><b>MY PROFILE</b></h1>
+            </div>
+            <div class="p-4">
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-2 text-center"><b>REG.NO. : {{ureg}}</b></h1>
+            </div>
+            <div class="p-4">
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-2 text-center"><b>USERNAME : {{uname}}</b></h1>
+            </div>
+            <div class="p-4">
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-2 text-center"><b>EMAIL : {{uemail}}</b></h1>
+            </div>
+            <div class="p-4">
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-4 text-center"><b>MENTOR ID : {{uopt}}</b></h1>
+            </div>
           </div>
         </div>
-      </nav>
-        <br><br><br>
-        <div class="card card1">
-            <h1 style="text-align: center;margin-top: 20px;">MY PROFILE</h1>
-            <br>
-            <div class="pfile">
-                    <br><br>
-                    <p><b>REG NO:{{ureg}}</b></p>
-                    <br>
-                    <p><b>Username:{{uname}} </b></p>
-                    <br>
-                    <p><b>Email:{{uemail}}</b></p>
-                    <br>
-                    <p><b>Mentor ID: {{uopt}} </b></p>
-                    <br><br>
-            </div>
-      </div>
     </div>
-
-    <div class="overlay"></div>
-
-<!--
-<h1>Profiles</h1>
-
-<ul>
-  <li *ngFor="let user of users">
-    <p class="name">{{ user.username }}</p>
-    <p class="name">{{ user.email }}</p>
-    <p class="name">{{ user.regno }}</p>
-  </li>
-</ul>-->
+    <br><br><br><br>
+    <footer class="text-gray-100 body-font bg-gray-900 footer">
+      <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <img class="fill-current h-15 w-15" width="54" height="54" viewBox="0 0 54 54" src="../../../assets/logo.png" style="margin-top: 5px;">
+          <span class="ml-3 text-xl text-gray-100">IW</span>
+        </a>
+        <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0">© 2020 Inception Wave</p>
+        <span class="inline-flex sm:ml-auto sm:mt-0 justify-center sm:justify-start tp">
+          <a class="text-gray-500">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+              <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+              <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            </svg>
+          </a>
+        </span>
+      </div>
+  </footer>
+</body>
+</html>

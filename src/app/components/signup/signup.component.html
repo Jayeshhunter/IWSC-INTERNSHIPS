@@ -1,45 +1,110 @@
-<ngx-spinner></ngx-spinner>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-blue-500">
+  <ngx-spinner></ngx-spinner>
   <div class="container-shadow"></div>
-  <div class="container" style="height: 830px">
-    <div class="wrap" style="margin-top: -70px;">
-      <div class="headings">
-        <h1 style="text-align: center;color: whitesmoke;">SIGNUP</h1>
+  <nav class="flex items-center justify-between flex-wrap bg-gray-900 p-6 headclass">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <img class="fill-current h-15 w-15 mr-5" width="54" height="54" viewBox="0 0 54 54" src="../../../assets/logo.png" style="margin-top: 5px;">
+        <span class="font-semibold text-xl tracking-tight">Inception Wave</span>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-sm lg:flex-grow">
+        <a routerLink="/" class="block lg:inline-block lg:mt-0 text-white hover:text-white mr-4 tp">
+            HOME
+        </a>
+        </div>
+        <div>
+        <a (click)="loggout()" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent lg:mt-0 tp">Log Out</a>
+        </div>
+    </div>
+  </nav>  
+    <br><br><br><br><br>
+    <form class="w-full max-w-lg ddashh bg-blue-500">
+      <h2 class=" text-center text-3xl leading-9 font-extrabold text-gray-900">
+          Sign Up - Intern
+      </h2>
+      <br><br>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label class="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" for="grid-first-name">
+            Registration No.
+          </label>
+          <input class="appearance-none block w-full bg-gray-800 text-gray-100 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-500" name="regno" type="number" placeholder="12345"  [(ngModel)]="registerUserData.regno" id="regno">
+        </div>
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label class="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" for="grid-first-name">
+            Username
+          </label>
+          <input class="appearance-none block w-full bg-gray-800 text-gray-100 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-500" name="username" type="text" placeholder="User" [(ngModel)]="registerUserData.username" id="name">
+        </div>
       </div>
-      <div>
-        <form class="form" style="margin-top: -60px;">
-          <div class="form-group">
-            <label >Registration Number</label>
-            <input type="number" name="regno" [(ngModel)]="registerUserData.regno" id="regno" ngModel required = "true">
-          </div>
-          <div class="form-group">
-            <label >Username</label>
-            <input type="text" name="username" [(ngModel)]="registerUserData.username" id="name" ngModel required = "true">
-          </div>
-          <div class="form-group">
-            <label>Password</label>
-            <input type="password" name="password" [(ngModel)]="registerUserData.password" id="password" ngModel required = "true">
-          </div>
-          <div class="form-group">
-            <label for="profs">Please Select a mentor:</label>
-            <br>
-            <select name="profs" id="profs" [(ngModel)]="registerUserData.options" ngModel required = "true">
-              <option style="font-size: 15px;color: black;" value="{{admin.regno}}" name="options" *ngFor="let admin of admins">{{admin.regno}}</option>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <label class="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" for="grid-password">
+            Password
+          </label>
+          <input class="appearance-none block w-full bg-gray-800 text-gray-200 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-500 focus:border-gray-500" name="password" type="password" placeholder="******************" [(ngModel)]="registerUserData.password" id="password">
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-2">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label class="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" for="grid-state">
+            Mentor ID
+          </label>
+          <div class="relative">
+            <select class="block appearance-none w-full bg-gray-800 border border-gray-200 text-gray-200 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-gray-500 focus:border-gray-500" name="profs" id="profs" [(ngModel)]="registerUserData.options" ngModel>
+              <option value="{{admin.regno}}" name="options" *ngFor="let admin of admins">{{admin.regno}}</option>
             </select>
           </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="email" id="email" [(ngModel)]="registerUserData.email" ngModel [email]="true" required = "true">
-          </div>
-          <button type="button" (click)="check()" class="btnsign">SIGNUP</button>
-        </form>
-        <label class="nyr">Already Registered Account?</label>
-        <button type="button" routerLink="/login" class="log">Login</button>
+        </div>
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label class="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" for="grid-zip">
+            Email
+          </label>
+          <input class="appearance-none block w-full bg-gray-800 text-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-500 focus:border-gray-500" name="email" type="email" [(ngModel)]="registerUserData.email" placeholder="user@gmail.com">
+        </div>
       </div>
       <br>
-    </div><br><br>
-  </div>
-
+      <div style="text-align: center;"><button (click)="check()" class="bg-black hover:bg-gray-800 text-white font-bold py-2 px-10 rounded-lg text-xl">Sign Up</button></div>
+  </form>
+  
+  <h4 class=" text-center text-xl leading-9 font-extrabold text-gray-900 bg-blue-500">
+    <br><a routerLink="/login" class="hover:no-underline hover:text-white">Already Signed - up</a><br><br>
+  </h4>
+  <footer class="text-gray-100 body-font bg-gray-900 footer">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <img class="fill-current h-15 w-15" width="54" height="54" viewBox="0 0 54 54" src="../../../assets/logo.png" style="margin-top: 5px;">
+        <span class="ml-3 text-xl text-gray-100">IW</span>
+      </a>
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0">© 2020 Inception Wave</p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 justify-center sm:justify-start tp">
+        <a class="ml-3 text-gray-300 hover:text-white" href="https://www.facebook.com/inceptionwave1202/">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-300 hover:text-white" href="https://www.instagram.com/inception_wave/?hl=en">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-300 hover:text-white" href="https://www.linkedin.com/company/inceptionwave">
+          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+          </svg>
+        </a>
+      </span>
+    </div>
+</footer>
 </body>
-
-
+</html>

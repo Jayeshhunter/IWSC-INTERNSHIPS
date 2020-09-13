@@ -68,11 +68,8 @@ export class SignupComponent implements OnInit {
       alert("Password is Empty")
     }if(this.registerUserData.options==null){
       alert("Options is Empty")
-    }if(this.registerUserData.email==null){
-      alert("Email is Empty")
-    }
-    if(this.checkmail.test(this.registerUserData.email)==false){
-      alert('Wrong Email Format')
+    }if(this.registerUserData.email==null || this.checkmail.test(this.registerUserData.email)==false){
+      alert("Email is of wrong format")
     }
     else{
       this.registerUser()

@@ -1,19 +1,37 @@
-<body id="bo">
-    <div class="wrapper">
-        <nav class="navbar navbar-expand-lg navbar-light nnaavv" style="background-color: #F0F8FF;">
-            <a class="navbar-brand navi" routerLink="/"><img src="../../../assets/logo.png"width="80" height="80"/></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="margin-top:40px;">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav bbtn">
-                <button style="margin-top: 5px;" class="btn" routerLink="/adminprofile">PROFILE</button>
-                <button style="margin-top: 5px;" class="btn btn1" (click)="loggout()">LOGOUT</button>
-              </div>
-            </div>
-          </nav>
-        <br><br><br>
-        <div class="text-center">
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="flex items-center justify-between flex-wrap bg-gray-900 p-6 headclass">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <img class="fill-current h-15 w-15 mr-5" width="54" height="54" viewBox="0 0 54 54" src="../../../assets/logo.png" style="margin-top: 5px;">
+        <span class="font-semibold text-xl tracking-tight">Inception Wave</span>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-sm lg:flex-grow">
+        <a routerLink="/" class="block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 tp">
+            HOME
+        </a>
+        <a routerLink="/adminprofile" class="block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 tp">
+            PROFILE
+        </a>
+        </div>
+        <div>
+        <a (click)="loggout()" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent lg:mt-0 tp">Log Out</a>
+        </div>
+    </div>
+</nav>  
+<br><br><br><br>
+        <div class="text-center pldr">
           <circle-progress *ngIf="loader"
           [percent]="100"
           [radius]="50"
@@ -25,17 +43,64 @@
           [animationDuration]="10000"
           ></circle-progress>
         </div>
-        <div class="card card1" *ngIf="!loader">
-            <h1 class="hname">LIST OF INTERNS</h1>
+        <div class="card1" *ngIf="!loader">
+          <div style="margin-top: 70px;">
             <div *ngIf="users1.length === 0">
-              <h3 class="hname">No interns registerd under you!!!</h3>
+              <h1 style="text-align: center;" class="font-mono dashhead">NO INTERNS REGISTERED UNDER YOU</h1>
+              <br><br><br><br><br><br><br><br>
             </div>
-            <div style="margin-top: 70px;">
-                <ul>
-                    <li class="card tname"*ngFor="let user of users1"><a class="atname" (click)="eachint(user)"><b>{{user.username}}</b></a></li>
-                </ul>
-                <br><br>
+            <div *ngIf="users1.length > 0">
+              <h1 style="text-align: center;" class="font-mono dashhead">LIST OF INTERNS</h1>
+              <br>
+              <ul *ngFor="let user of users1">
+                  <li>
+                     <div class="ddashh">
+                      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                      <a class="atname" (click)="eachint(user)">
+                          <div class="h-full border-2 border-gray-500 rounded-lg overflow-hidden bg-blue-300 hover:border-gray-900">
+                            <div class="p-4">
+                              <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-center" style="font-family: cursive;"><b style="text-transform:capitalize;">{{user.username}}</b></h1>
+                            </div>
+                          </div>
+                        </a>
+                        </div>
+                     </div>
+                  </li>
+                  <br>
+              </ul>
+              <br><br>
             </div>
-        </div>
-    </div>
-    </body>
+          </div>
+  
+        <br><br><br><br><br><br><br><br>
+        <footer class="text-gray-100 body-font bg-gray-900 footer">
+          <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+              <img class="fill-current h-15 w-15" width="54" height="54" viewBox="0 0 54 54" src="../../../assets/logo.png" style="margin-top: 5px;">
+              <span class="ml-3 text-xl text-gray-100">IW</span>
+            </a>
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0">© 2020 Inception Wave</p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 justify-center sm:justify-start tp">
+              <a class="ml-3 text-gray-300 hover:text-white" href="https://www.facebook.com/inceptionwave1202/">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-300 hover:text-white" href="https://www.instagram.com/inception_wave/?hl=en">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-300 hover:text-white" href="https://www.linkedin.com/company/inceptionwave">
+                <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                  <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                </svg>
+              </a>
+            </span>
+          </div>
+      </footer>
+  </div>
+</body>
+</html>

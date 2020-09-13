@@ -1,20 +1,37 @@
-<body id="bo">
-    
-    <div class="wrapper">
-      <nav class="navbar navbar-expand-lg navbar-light nnaavv" style="background-color: #F0F8FF;">
-        <a class="navbar-brand navi" routerLink="/"><img src="../../../assets/logo.png"width="80" height="80"/></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="margin-top:40px;">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav bbtn">
-            <button style="margin-top: 5px;" class="btn" (click)="dash()">DASHBOARD</button>
-            <button style="margin-top: 5px;" class="btn btn1" (click)="loggout()">LOGOUT</button>
-          </div>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="flex items-center justify-between flex-wrap bg-gray-900 p-6 headclass">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <img class="fill-current h-15 w-15 mr-5" width="54" height="54" viewBox="0 0 54 54" src="../../../assets/logo.png" style="margin-top: 5px;">
+        <span class="font-semibold text-xl tracking-tight">Inception Wave</span>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-sm lg:flex-grow">
+        <a routerLink="/" class="block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 tp">
+            HOME
+        </a>
+        <a routerLink="/profile" class="block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 tp">
+            PROFILE
+        </a>
         </div>
-      </nav>
-        <br><br><br>
-        <div class="text-center">
+        <div>
+        <a (click)="loggout()" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent lg:mt-0 tp">Log Out</a>
+        </div>
+    </div>
+</nav>  
+<br><br><br><br>
+        <div class="text-center pldr">
           <circle-progress *ngIf="loader"
           [percent]="100"
           [radius]="50"
@@ -26,37 +43,48 @@
           [animationDuration]="10000"
           ></circle-progress>
         </div>
-        <div class="card card1" *ngIf="!loader">
-            <h1 style="text-align: center;margin-top: 20px;">ABOUT THE TASK</h1>
-            <h3 class="date">Deadline: {{task.enddate}}</h3>
-            <h3 class="com">Status: {{task.complete}}</h3>
-            <br>
-            <div class="pfile">
-                <br><br>
-                <h1 style="text-transform:capitalize;">{{task.taskname}}</h1>   
-                <br><br>
-                <h4>DETAILS</h4>   
-                <p class="details">
-                    {{task.taskdetails}}
-                </p>
-                <br><br>
+        <div *ngIf="!loader">
+          <section class="text-gray-700 body-font font-mono">
+            <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col bg-gray-200 border-2 border-gray-300 rounded-lg hover:border-gray-400">
+              <div class="text-center lg:w-2/3 w-full">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900" style="text-transform:capitalize;">{{task.taskname}}</h1>
+                <h4 *ngIf="task.complete === 'Completed'" class="sm:text-xl text-xl mb-4"><b>STATUS : </b><b class="text-green-700">{{task.complete}}</b></h4>
+                <h4 *ngIf="task.complete === 'Incomplete'" class="sm:text-xl text-xl mb-4"><b>STATUS : </b><b class="text-red-600">{{task.complete}}</b></h4>
+                <h4  *ngIf="task.complete === 'Incomplete'"class="sm:text-xl text-xl mb-4 text-gray-900"><b>DEADLINE: {{task.enddate}}</b></h4>
+                <p class="mb-8 leading-relaxed">{{task.taskdetails}}</p>
+              </div>
             </div>
-            <br>
-      </div>
-    </div>
-
-    <div class="overlay"></div>
-
-<!--
-    Web development is the work involved in developing a website for the Internet (World Wide Web) or an intranet (a private network).
-                    [1] Web development can range from developing a simple single static page of plain text to complex web-based internet applications 
-                    (web apps), electronic businesses, and social network services. A more comprehensive list of tasks to which web development commonly 
-                    refers, may include web engineering, web design, web content development, client liaison, client-side/server-side scripting, 
-                    web server and network security configuration, and e-commerce development.Among web professionals, "web development" usually refers
-                    to the main non-design aspects of building websites: writing markup and coding.[2] Web development may use content management 
-                    systems (CMS) to make content changes easier and available with basic technical skills.For larger organizations and businesses, web 
-                    development teams can consist of hundreds of people (web developers) and follow standard methods like Agile methodologies while 
-                    developing websites. Smaller organizations may only require a single permanent or contracting developer, or secondary assignment 
-                    to related job positions such as a graphic designer or information systems technician. Web development may be a collaborative effort 
-                    between departments rather than the domain of a designated department. 
--->
+        </section>
+        
+        <br><br><br><br><br><br><br><br>
+        <footer class="text-gray-100 body-font bg-gray-900 footer">
+          <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+              <img class="fill-current h-15 w-15" width="54" height="54" viewBox="0 0 54 54" src="../../../assets/logo.png" style="margin-top: 5px;">
+              <span class="ml-3 text-xl text-gray-100">IW</span>
+            </a>
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0">© 2020 Inception Wave</p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 justify-center sm:justify-start tp">
+              <a class="ml-3 text-gray-300 hover:text-white" href="https://www.facebook.com/inceptionwave1202/">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-300 hover:text-white" href="https://www.instagram.com/inception_wave/?hl=en">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-300 hover:text-white" href="https://www.linkedin.com/company/inceptionwave">
+                <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                  <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                </svg>
+              </a>
+            </span>
+          </div>
+      </footer>
+  </div>
+</body>
+</html>

@@ -1,53 +1,105 @@
-<body id="bo">
-    <div class="wrapper">
-        <nav class="navbar navbar-expand-lg navbar-light nnaavv" style="background-color: #F0F8FF;">
-            <a class="navbar-brand navi" routerLink="/"><img src="../../../assets/logo.png"width="80" height="80"/></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="margin-top:40px;">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav bbtn">
-                <button style="margin-top: 5px;" class="btn" routerLink="/adminprofile">PROFILE</button>
-                <button style="margin-top: 5px;" class="btn btn1" (click)="loggout()">LOGOUT</button>
-              </div>
-            </div>
-          </nav>
-        <br><br><br>
-        <div class="card card1">
-            <h1 class="hname">ADD NEW TASK</h1>
-            <form class="form">
-                <div class="card tname form-group">
-                    <label><b>Intern Name:</b></label>
-                    <input type="text" class="inp" placeholder="Intern's Name" name="username" [(ngModel)]="newTask.username" ng-required="true">
-                </div>
-                <div class="card tname form-group">
-                    <label><b>Mentor ID:</b></label>
-                    <input type="number" class="inp" placeholder="Enter your ID" name="options" [(ngModel)]="newTask.options" ng-required="true">
-                </div>
-                <div class="card tname form-group">
-                    <label><b>Task Name:</b></label>
-                    <input type="text" class="inp" placeholder="TITLE" name="taskname" [(ngModel)]="newTask.taskname" ng-required="true">
-                </div>
-                <div class="card tname form-group">
-                    <label><b>End Date:</b></label>
-                    <input type="text" class="inp" placeholder="DD/MM/YYYY" name="enddate" [(ngModel)]="newTask.enddate" ng-required="true">
-                </div>
-                <div class="card tname form-group">
-                    <label><b>Task Details:</b></label>
-                    <textarea class="txt" name="taskdetails" [(ngModel)]="newTask.taskdetails" ng-required="true"></textarea>
-                </div>
-                <br>
-                <p style="margin-top: 220px;">
-                    <button type="button" (click)="check()" class="btn btn2">ADD TASK</button>
-                </p>
-            </form> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="flex items-center justify-between flex-wrap bg-gray-900 p-6 headclass">
+        <div class="flex items-center flex-shrink-0 text-white mr-6">
+            <img class="fill-current h-15 w-15 mr-5" width="54" height="54" viewBox="0 0 54 54" src="../../../assets/logo.png" style="margin-top: 5px;">
+            <span class="font-semibold text-xl tracking-tight">Inception Wave</span>
         </div>
+        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+            <div class="text-sm lg:flex-grow">
+            <a routerLink="/" class="block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 tp">
+                HOME
+            </a>
+            <a routerLink="/adminprofile" class="block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 tp">
+                PROFILE
+            </a>
+            </div>
+            <div>
+            <a (click)="loggout()" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent lg:mt-0 tp">Log Out</a>
+            </div>
+        </div>
+    </nav> 
+    <!-- SIGN-UP FORM -->
+      
+    <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <form class="w-full max-w-lg">
+        <h2 class=" text-center text-3xl leading-9 font-extrabold text-gray-900">
+            ADD NEW TASK
+        </h2>
+        <br><br>
+        <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                Intern Name
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="User" name="username" [(ngModel)]="newTask.username">
+        </div>
+        <div class="w-full md:w-1/2 px-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                Your ID
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="number" placeholder="12345" name="options" [(ngModel)]="newTask.options">
+        </div>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                    Task Name
+                </label>
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="Task 1" name="taskname" [(ngModel)]="newTask.taskname">
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                    Deadline
+                </label>
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="DD/MM/YYY" name="enddate" [(ngModel)]="newTask.enddate">
+            </div>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full px-3">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                Task Details
+              </label>
+              <textarea class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-10 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Details" name="taskdetails" [(ngModel)]="newTask.taskdetails"></textarea>
+            </div>
+        </div>
+        <div style="text-align: center;"><button (click)="check()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded-lg text-xl">ADD TASK</button></div>
+    </form>
     </div>
-    </body>
-
-
-
-
-
-
-    
+    <footer class="text-gray-100 body-font bg-gray-900 footer">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <img class="fill-current h-15 w-15" width="54" height="54" viewBox="0 0 54 54" src="../../../assets/logo.png" style="margin-top: 5px;">
+            <span class="ml-3 text-xl text-gray-100">IW</span>
+          </a>
+          <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0">© 2020 Inception Wave</p>
+          <span class="inline-flex sm:ml-auto sm:mt-0 justify-center sm:justify-start tp">
+            <a class="ml-3 text-gray-300 hover:text-white" href="https://www.facebook.com/inceptionwave1202/">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-300 hover:text-white" href="https://www.instagram.com/inception_wave/?hl=en">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-300 hover:text-white" href="https://www.linkedin.com/company/inceptionwave">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+    </footer>
+</body>
+</html>

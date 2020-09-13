@@ -57,10 +57,8 @@ export class AdminsignupComponent implements OnInit {
       alert("Username is Empty")
     }if(this.registerAdminData.password==null){
       alert("Password is Empty")
-    }if(this.registerAdminData.email==null){
-      alert("Email is Empty")
-    }if(this.checkmail.test(this.registerAdminData.email)==false){
-      alert('Wrong Email Format')
+    }if(this.registerAdminData.email==null || this.checkmail.test(this.registerAdminData.email)==false){
+      alert("Email is of wrong format")
     }
     else{
       this.registerAdmin()
