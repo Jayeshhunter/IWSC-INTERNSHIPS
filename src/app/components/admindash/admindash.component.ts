@@ -15,8 +15,13 @@ export class AdmindashComponent implements OnInit {
   loader = true;
   constructor(private service:AppService,public router:ActivatedRoute,public rt:Router) {
     this.router.params.subscribe(params=>{
-      this.regno=params.regno;
-      this.username=params.username;
+      if(window.localStorage.getItem('ureg')==params.regno){
+        this.regno=params.regno;
+        this.username=params.username;}
+        else{
+          alert("Not Auth");
+          this.rt.navigate(['/adminlogin']);
+        }
     })
    }
   ngOnInit():void {

@@ -26,12 +26,12 @@
         </a>
         </div>
         <div>
-        <a (click)="loggout()" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent lg:mt-0 tp">Log Out</a>
+        <a (click)="loggout()" style="cursor: pointer;" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent lg:mt-0 tp">Log Out</a>
         </div>
     </div>
 </nav>  
 <br><br><br><br>
-        <div class="text-center pldr">
+        <div class="pldr">
           <circle-progress *ngIf="loader"
           [percent]="100"
           [radius]="50"

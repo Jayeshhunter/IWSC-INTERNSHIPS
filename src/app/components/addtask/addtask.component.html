@@ -22,13 +22,12 @@
             </a>
             </div>
             <div>
-            <a (click)="loggout()" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent lg:mt-0 tp">Log Out</a>
+            <a (click)="loggout()" style="cursor: pointer;" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent lg:mt-0 tp">Log Out</a>
             </div>
         </div>
     </nav> 
     <!-- SIGN-UP FORM -->
-      
-    <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="min-h-screen flex justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
     <form class="w-full max-w-lg">
         <h2 class=" text-center text-3xl leading-9 font-extrabold text-gray-900">
             ADD NEW TASK
@@ -36,10 +35,15 @@
         <br><br>
         <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-                Intern Name
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+              Intern's Name
             </label>
-            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="User" name="username" [(ngModel)]="newTask.username">
+            <div class="relative">
+              <select class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="username" [(ngModel)]="newTask.username">
+                <option value="{{user.username}}" name="username" *ngFor="let user of users1">{{user.username}}</option>
+              </select>
+            </div>
+            <!-- <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="User" name="username" [(ngModel)]="newTask.username"> -->
         </div>
         <div class="w-full md:w-1/2 px-3">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">

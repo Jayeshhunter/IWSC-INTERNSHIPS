@@ -1,15 +1,14 @@
 
 @media(min-width: 1000px){
-    .ddashh{
-        margin-left: 500px;
-    }
     .dashhead{
         font-size: 50px;
     }
     .pldr{
         margin-left: 700px;
     }
-    
+    .daassh{
+        width: 400px;margin-left: 240px;
+      }
     }
     
     @media(max-width: 426px){
@@ -21,6 +20,9 @@
         }
         .pldr{
             margin-left: 150px;
+        }
+        .flex{
+            display: block;
         }
     }
     

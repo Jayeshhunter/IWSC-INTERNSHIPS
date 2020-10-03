@@ -12,7 +12,12 @@ export class EachinternComponent implements OnInit {
   username:any;
   uu:any;
   U:any;
-  loader = true;
+  loader = true; 
+  //   this.service.admindashboard(window.localStorage.getItem('ureg')).subscribe(data=>{
+  //     this.router.params.subscribe(params=>{
+        
+  //     })
+  //   })
   constructor(private service:AppService,public router:ActivatedRoute,public rt:Router,private _location: Location) { 
     this.router.params.subscribe(params=>{
       this.username=params.username;

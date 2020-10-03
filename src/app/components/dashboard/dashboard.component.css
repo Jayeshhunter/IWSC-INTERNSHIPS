@@ -9,7 +9,9 @@
     .pldr{
         margin-left: 700px;
     }
-    
+    .daassh{
+        width: 400px;margin-left: 240px;
+      }
     }
     
     @media(max-width: 426px){
@@ -21,6 +23,9 @@
         }
         .pldr{
             margin-left: 150px;
+        }
+        .flex{
+            display: block;
         }
     }
     

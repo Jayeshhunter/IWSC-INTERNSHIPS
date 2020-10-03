@@ -16,6 +16,7 @@ export class Task {
 })
 export class AddtaskComponent implements OnInit {
   newTask = new Task();
+  users1:any;
   constructor(private service:AppService,public router:Router,private _location: Location) { }
   onSubmit()
   {
@@ -51,7 +52,12 @@ export class AddtaskComponent implements OnInit {
       this.onSubmit()
     }
   }
-  ngOnInit() {
+  ngOnInit():void {
+    this.service.admindashboard(window.localStorage.getItem('ureg')).subscribe(data=>{
+      this.users1 = data;
+      console.log(this.users1);
+    }
+    )
   }
 
 }

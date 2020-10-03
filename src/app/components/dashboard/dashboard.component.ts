@@ -15,7 +15,12 @@ export class DashboardComponent implements OnInit {
   loader = true;
   constructor(private service:AppService,public router:ActivatedRoute,public rt:Router) { 
     this.router.params.subscribe(params=>{
-      this.username=params.username;
+      if(window.localStorage.getItem('un')=='"'+params.username+'"'){
+      this.username=params.username;}
+      else{
+        alert("Not Auth");
+        this.rt.navigate(['/login']);
+      }
     })
   }
 
