@@ -28,10 +28,8 @@ export class AdminsignupComponent implements OnInit {
       this.service.signupadmin(this.registerAdminData)
       .subscribe(
         (res:any) =>{
-          window.localStorage.setItem('token',res.token)
-          window.localStorage.setItem('un', JSON.stringify(res.admin.username))
-          window.localStorage.setItem('ue', JSON.stringify(res.admin.email))
-          window.localStorage.setItem('ureg', JSON.stringify(res.admin.regno))
+          window. sessionStorage.setItem('token',res.token)
+          window. sessionStorage.setItem('ureg', JSON.stringify(res.admin.regno))
           setTimeout(()=>{
             alert("SIGNUP WAS SUCCESSFULL !!!");
             this.router.navigate(['/admindash',{regno:res.admin.regno}])
@@ -53,11 +51,11 @@ export class AdminsignupComponent implements OnInit {
   check(){
     if(this.registerAdminData.regno==null){
       alert("Register Number is Empty")
-    }if(this.registerAdminData.username==null){
+    }else if(this.registerAdminData.username==null){
       alert("Username is Empty")
-    }if(this.registerAdminData.password==null){
+    }else if(this.registerAdminData.password==null){
       alert("Password is Empty")
-    }if(this.registerAdminData.email==null || this.checkmail.test(this.registerAdminData.email)==false){
+    }else if(this.registerAdminData.email==null || this.checkmail.test(this.registerAdminData.email)==false){
       alert("Email is of wrong format")
     }
     else{

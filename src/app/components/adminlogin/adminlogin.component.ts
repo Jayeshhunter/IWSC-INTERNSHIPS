@@ -24,10 +24,8 @@ export class AdminloginComponent implements OnInit {
       this.service.loginadmin(this.loginAdminData)
       .subscribe(
         (res:any) => {
-          window.localStorage.setItem('token', res.token)
-          window.localStorage.setItem('un', JSON.stringify(res.admin.username))
-          window.localStorage.setItem('ue', JSON.stringify(res.admin.email))
-          window.localStorage.setItem('ureg',(res.admin.regno))
+          window. sessionStorage.setItem('token', res.token)
+          window. sessionStorage.setItem('ureg',(res.admin.regno))
           setTimeout(()=>{
             this.router.navigate(['/admindash',{regno:res.admin.regno}])
             this.spinner.hide();
@@ -58,6 +56,16 @@ export class AdminloginComponent implements OnInit {
     }
   }
   ngOnInit() {
+  }
+  check(){
+    if(this.loginAdminData.username==null){
+      alert("Username is Empty")
+    }else if(this.loginAdminData.password==null){
+      alert("Password is Empty")
+    }
+    else{
+      this.loginAdmin()
+    }
   }
 
 }

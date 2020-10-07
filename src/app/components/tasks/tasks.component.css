@@ -22,6 +22,18 @@
         .pldr{
             margin-left: 150px;
         }
+        .upper{
+            width: 100%;
+            font-size: 90%;
+        }
+        .details{
+            zoom: 1.1;
+        }
+    }
+    @media(max-width: 370px){
+        .upper{
+            font-size: 90%;
+        }
     }
     
     

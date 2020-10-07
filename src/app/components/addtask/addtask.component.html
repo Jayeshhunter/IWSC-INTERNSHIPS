@@ -7,17 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="flex items-center justify-between flex-wrap bg-gray-900 p-6 headclass">
+    <nav class="flex items-center justify-between flex-wrap bg-gray-900 p-6 headclass" *ngIf="!loader">
         <div class="flex items-center flex-shrink-0 text-white mr-6">
             <img class="fill-current h-15 w-15 mr-5" width="54" height="54" viewBox="0 0 54 54" src="../../../assets/logo.png" style="margin-top: 5px;">
             <span class="font-semibold text-xl tracking-tight">Inception Wave</span>
         </div>
         <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
             <div class="text-sm lg:flex-grow">
-            <a routerLink="/" class="block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 tp">
+            <a (click)="dash()" class="block lg:inline-block lg:mt-0 text-white hover:text-white mr-4 tp" style="cursor: pointer;">
                 HOME
             </a>
-            <a routerLink="/adminprofile" class="block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 tp">
+            <a routerLink="/adminprofile/{{regno}}" class="block lg:inline-block lg:mt-0 text-white hover:text-white mr-4 tp hover:no-underline">
                 PROFILE
             </a>
             </div>
@@ -25,16 +25,29 @@
             <a (click)="loggout()" style="cursor: pointer;" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent lg:mt-0 tp">Log Out</a>
             </div>
         </div>
-    </nav> 
+    </nav>
+    <h1 class="text-center text-3xl leading-9 font-extrabold text-gray-900">
+      <circle-progress *ngIf="loader"
+        [percent]="100"
+        [radius]="50"
+        [outerStrokeWidth]="8"
+        [innerStrokeWidth]="4"
+        outerStrokeColor="white"
+        innerStrokeColor="white"
+        [animation]="true"
+        [animationDuration]="10000"
+        >
+      </circle-progress>
+    </h1> 
     <!-- SIGN-UP FORM -->
-    <div class="min-h-screen flex justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="min-h-screen flex justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8" *ngIf="!loader">
     <form class="w-full max-w-lg">
         <h2 class=" text-center text-3xl leading-9 font-extrabold text-gray-900">
             ADD NEW TASK
         </h2>
         <br><br>
         <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <div class="w-full md:w-full px-3 mb-6 md:mb-0">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
               Intern's Name
             </label>
@@ -43,29 +56,30 @@
                 <option value="{{user.username}}" name="username" *ngFor="let user of users1">{{user.username}}</option>
               </select>
             </div>
-            <!-- <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="User" name="username" [(ngModel)]="newTask.username"> -->
         </div>
-        <div class="w-full md:w-1/2 px-3">
+        <!-- <div class="w-full md:w-1/2 px-3">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
                 Your ID
             </label>
             <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="number" placeholder="12345" name="options" [(ngModel)]="newTask.options">
+        </div> -->
         </div>
-        </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div class="flex flex-wrap -mx-3 mb-6">
+              <div class="w-full md:w-full px-3 mb-6 md:mb-0">
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                     Task Name
                 </label>
                 <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="Task 1" name="taskname" [(ngModel)]="newTask.taskname">
+              </div>
             </div>
-            <div class="w-full md:w-1/2 px-3">
+            <div class="flex flex-wrap -mx-3 mb-6">
+              <div class="w-full md:w-full px-3 mb-6 md:mb-0">
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
                     Deadline
                 </label>
                 <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="DD/MM/YYY" name="enddate" [(ngModel)]="newTask.enddate">
+              </div>
             </div>
-        </div>
         <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3">
               <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
@@ -77,11 +91,11 @@
         <div style="text-align: center;"><button (click)="check()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded-lg text-xl">ADD TASK</button></div>
     </form>
     </div>
-    <footer class="text-gray-100 body-font bg-gray-900 footer">
+    <footer class="text-gray-100 body-font bg-gray-900 footer" *ngIf="!loader">
         <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
           <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <img class="fill-current h-15 w-15" width="54" height="54" viewBox="0 0 54 54" src="../../../assets/logo.png" style="margin-top: 5px;">
-            <span class="ml-3 text-xl text-gray-100">IW</span>
+             
           </a>
           <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0">© 2020 Inception Wave</p>
           <span class="inline-flex sm:ml-auto sm:mt-0 justify-center sm:justify-start tp">

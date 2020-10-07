@@ -12,10 +12,12 @@ export class DashboardComponent implements OnInit {
   tasks:any;
   username:any;
   yes:any;
+  comp = [];
+  incomp = [];
   loader = true;
   constructor(private service:AppService,public router:ActivatedRoute,public rt:Router) { 
     this.router.params.subscribe(params=>{
-      if(window.localStorage.getItem('un')=='"'+params.username+'"'){
+      if(window. sessionStorage.getItem('un')=='"'+params.username+'"'){
       this.username=params.username;}
       else{
         alert("Not Auth");
@@ -27,8 +29,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit():void {
     this.service.dashboard(this.username).subscribe(data=>{
       this.tasks = data;
-      console.log(this.tasks);
       this.loader = false;
+      this.distribute()
     },
     (err)=>{
       if(err instanceof HttpErrorResponse) {
@@ -39,9 +41,21 @@ export class DashboardComponent implements OnInit {
       }
     })
   }
+  distribute(){
+    for(var i = 0; i< this.tasks.length;i++){
+      if(this.tasks[i].complete=="Completed"){
+        this.comp.push(this.tasks[i]);
+      }
+      else if(this.tasks[i].complete=="Incomplete"){
+        this.incomp.push(this.tasks[i]);
+      }
+    }
+    console.log(this.comp);
+    console.log(this.incomp);
+  }
   loggout()
   {
-    localStorage.clear();
+     sessionStorage.clear();
     this.rt.navigate(['/login'])
   }
   dash()

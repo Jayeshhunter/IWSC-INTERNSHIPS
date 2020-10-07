@@ -4,9 +4,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AppService {
-  url:string="https://floating-oasis-88507.herokuapp.com";
+  //url:string="https://floating-oasis-88507.herokuapp.com";
 
-  //url:string="http://localhost:3000";
+  url:string="http://localhost:3000";
 
   constructor(private http:HttpClient) { 
   }
@@ -30,29 +30,33 @@ export class AppService {
   {
     return this.http.get(this.url+'/user/taskone'+"?id="+id);
   }
+  profile(username:any)
+  {
+    return this.http.get(this.url+'/user/profile/'+username);
+  }
   getToken()
   {
-    return window.localStorage.getItem('token')
+    return window. sessionStorage.getItem('token')
   }
   getuserun()
   {
-    return window.localStorage.getItem('un')
+    return window. sessionStorage.getItem('un')
   }
   getuserue()
   {
-    return window.localStorage.getItem('ue')
+    return window. sessionStorage.getItem('ue')
   }
   getuserureg()
   {
-    return window.localStorage.getItem('ureg')
+    return window. sessionStorage.getItem('ureg')
   }
   getuseruopt()
   {
-    return window.localStorage.getItem('uopt')
+    return window. sessionStorage.getItem('uopt')
   }
   loggedIn()
   {
-    return !!window.localStorage.getItem('token')
+    return !!window. sessionStorage.getItem('token')
   }
   /*************************************************************************************************** */
   
@@ -81,6 +85,13 @@ export class AppService {
   {
     return this.http.get(this.url+'/admin/dashboard/taskone/'+id);
   }
+  profileadmin(regno:any)
+  {
+    return this.http.get(this.url+'/admin/profile/'+regno);
+  }
+  delete(id:any){
+    return this.http.get(this.url+'/admin/dashboard/taskone/delete/'+id)
+  }
   approve(id:any){
     let body={
       id:id
@@ -92,5 +103,8 @@ export class AppService {
       id:id
     }
     return this.http.post(this.url+'/admin/dashboard/taskone/incomplete',body);
+  }
+  remark(id:any,remark){
+    return this.http.post(this.url+'/admin/dashboard/taskone/remark/'+id,remark);
   }
 }

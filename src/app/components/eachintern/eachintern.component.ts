@@ -12,24 +12,39 @@ export class EachinternComponent implements OnInit {
   username:any;
   uu:any;
   U:any;
+  regno:any;
+  todash:any;
   loader = true; 
-  //   this.service.admindashboard(window.localStorage.getItem('ureg')).subscribe(data=>{
-  //     this.router.params.subscribe(params=>{
-        
-  //     })
-  //   })
+  usernames:any;
+  comp = [];
+  incomp = [];
   constructor(private service:AppService,public router:ActivatedRoute,public rt:Router,private _location: Location) { 
     this.router.params.subscribe(params=>{
       this.username=params.username;
       this.U=params.id;
+      this.regno = window. sessionStorage.getItem('ureg');
     })
   }
   ngOnInit():void {
+    this.todash = this.service.getuserureg();
     this.service.eachintern(this.username).subscribe(data=>{
       this.users1 = data;
-      console.log(this.users1);
+      this.usernames = data[0].username;
+      this.distribute();
       this.loader = false;
     })
+  }
+  distribute(){
+    for(var i = 0; i< this.users1.length;i++){
+      if(this.users1[i].complete=="Completed"){
+        this.comp.push(this.users1[i]);
+      }
+      else if(this.users1[i].complete=="Incomplete"){
+        this.incomp.push(this.users1[i]);
+      }
+    }
+    console.log(this.comp);
+    console.log(this.incomp);
   }
   eacht(uu){
     console.log(uu._id);
@@ -37,12 +52,12 @@ export class EachinternComponent implements OnInit {
   }
   loggout()
   {
-    localStorage.clear();
+     sessionStorage.clear();
     this.rt.navigate(['/adminlogin'])
   }
   dash()
   {
-    this._location.back();
+    this.rt.navigate(['/admindash',{regno:JSON.parse(this.todash)}]);
   }
   ngOnDestroy() {
 

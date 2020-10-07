@@ -15,7 +15,7 @@ export class AdmindashComponent implements OnInit {
   loader = true;
   constructor(private service:AppService,public router:ActivatedRoute,public rt:Router) {
     this.router.params.subscribe(params=>{
-      if(window.localStorage.getItem('ureg')==params.regno){
+      if(window. sessionStorage.getItem('ureg')==params.regno){
         this.regno=params.regno;
         this.username=params.username;}
         else{
@@ -46,7 +46,7 @@ export class AdmindashComponent implements OnInit {
   }
   loggout()
   {
-    localStorage.clear();
+     sessionStorage.clear();
     this.rt.navigate(['/adminlogin'])
   }
   ngOnDestroy() {

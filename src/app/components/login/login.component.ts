@@ -25,11 +25,8 @@ export class LoginComponent implements OnInit {
       this.service.login(this.loginUserData)
       .subscribe(
         (res:any) => {
-          window.localStorage.setItem('token', res.token)
-          window.localStorage.setItem('un', JSON.stringify(res.user.username))
-          window.localStorage.setItem('ue', JSON.stringify(res.user.email))
-          window.localStorage.setItem('ureg', JSON.stringify(res.user.regno))
-          window.localStorage.setItem('uopt', JSON.stringify(res.user.options))
+          window. sessionStorage.setItem('token', res.token)
+          window. sessionStorage.setItem('un', JSON.stringify(res.user.username))
           setTimeout(() => {
             this.router.navigate(['/dashboard',{username:res.user.username}])
             this.spinner.hide();
@@ -63,6 +60,16 @@ export class LoginComponent implements OnInit {
     else{
       alert("You are not loggedIn. Try to loggin again.")
       this.router.navigate(['/login'])
+    }
+  }
+  check(){
+    if(this.loginUserData.username==null){
+      alert("Username is Empty")
+    }else if(this.loginUserData.password==null){
+      alert("Password is Empty")
+    }
+    else{
+      this.loginUser()
     }
   }
   ngOnInit() {

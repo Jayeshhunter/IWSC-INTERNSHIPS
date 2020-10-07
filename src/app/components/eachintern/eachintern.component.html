@@ -11,17 +11,17 @@
 
 <body>
 
-  <nav class="flex items-center justify-between flex-wrap bg-gray-900 p-6 headclass">
+  <nav class="flex items-center justify-between flex-wrap bg-gray-900 p-6 headclass" *ngIf="!loader">
     <div class="flex items-center flex-shrink-0 text-white mr-6">
         <img class="fill-current h-15 w-15 mr-5" width="54" height="54" viewBox="0 0 54 54" src="../../../assets/logo.png" style="margin-top: 5px;">
         <span class="font-semibold text-xl tracking-tight">Inception Wave</span>
     </div>
     <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow">
-        <a routerLink="/" class="block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 tp">
+        <a (click)="dash()" class="block lg:inline-block lg:mt-0 text-white hover:text-white mr-4 tp" style="cursor: pointer;">
             HOME
         </a>
-        <a routerLink="/adminprofile" class="block lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 tp">
+        <a routerLink="/adminprofile/{{regno}}" class="block lg:inline-block lg:mt-0 text-white hover:text-white mr-4 tp hover:no-underline">
             PROFILE
         </a>
         </div>
@@ -31,18 +31,19 @@
     </div>
 </nav>  
 <br><br><br><br>
-        <div class="pldr">
+        <h1 class="text-center text-3xl leading-9 font-extrabold text-gray-900">
           <circle-progress *ngIf="loader"
-          [percent]="100"
-          [radius]="50"
-          [outerStrokeWidth]="8"
-          [innerStrokeWidth]="4"
-          outerStrokeColor="red"
-          innerStrokeColor="yellow"
-          [animation]="true"
-          [animationDuration]="10000"
-          ></circle-progress>
-        </div>
+            [percent]="100"
+            [radius]="50"
+            [outerStrokeWidth]="8"
+            [innerStrokeWidth]="4"
+            outerStrokeColor="white"
+            innerStrokeColor="white"
+            [animation]="true"
+            [animationDuration]="10000"
+            >
+          </circle-progress>
+        </h1>
         <div class="card1" *ngIf="!loader">
           <div style="margin-top: 70px;">
             <div *ngIf="users1.length === 0">
@@ -52,14 +53,17 @@
               <br><br><br><br><br>
             </div>
             <div *ngIf="users1.length > 0">
-              <h1 style="text-align: center;" class="text-center text-3xl leading-9 font-extrabold text-gray-900">INTER'S TASKS</h1>
+              <h1 style="text-align: center;" class="text-center text-3xl leading-9 font-extrabold text-gray-900" style="text-transform: capitalize;">{{usernames}} TASKS</h1>
               <br><br>
               <div style="text-align: center;"><button routerLink="/addtask" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg text-xl">ADD NEW TASK</button></div>
               <br><br>
-              <div class="flex">
+              <div class="flex flex1">
                 <div class="w-1/2" class="daassh">
                   <h2 style="text-align: center;" class="text-center text-2xl leading-9 font-extrabold text-gray-900">Incomplete</h2><br>
-                  <ul *ngFor="let user of users1">
+                    <div *ngIf="incomp.length === 0">
+                      <h4 style="text-align: center;" class="text-center text-xl leading-9 text-gray-900">No Tasks</h4>
+                    </div>
+                  <ul *ngFor="let user of incomp;index as i">
                     <div *ngIf="user.complete==='Incomplete'">
                       <li style="cursor: pointer;">
                          <div>
@@ -67,7 +71,7 @@
                             <a (click)="eacht(user)">
                               <div class="h-full border-2 border-gray-500 rounded-lg overflow-hidden bg-red-600 hover:border-gray-900">
                                 <div class="p-4">
-                                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-center font-mono"><b style="text-transform:capitalize;">{{user.taskname}}</b></h1>
+                                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-left font-mono"><b style="text-transform:capitalize;">{{i+1}}. {{user.taskname}} </b></h1>
                                 </div>
                               </div>
                             </a>
@@ -80,7 +84,10 @@
                 </div>
                 <div class="w-1/2" class="daassh">
                   <h2 style="text-align: center;" class="text-center text-2xl leading-9 font-extrabold text-gray-900">Complete</h2><br>
-                  <ul *ngFor="let user of users1">
+                  <div *ngIf="comp.length === 0">
+                    <h4 style="text-align: center;" class="text-center text-xl leading-9 text-gray-900">No Tasks</h4>
+                  </div>
+                  <ul *ngFor="let user of comp;index as i">
                     <div *ngIf="user.complete==='Completed'">
                       <li  style="cursor: pointer;">
                          <div>
@@ -88,7 +95,7 @@
                             <a (click)="eacht(user)">
                               <div class="h-full border-2 border-gray-500 rounded-lg overflow-hidden bg-green-400 hover:border-gray-900">
                                 <div class="p-4">
-                                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-center font-mono"><b style="text-transform:capitalize;">{{user.taskname}}</b></h1>
+                                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-left font-mono"><b style="text-transform:capitalize;">{{i+1}}. {{user.taskname}} </b></h1>
                                 </div>
                               </div>
                             </a>
@@ -103,11 +110,11 @@
             </div>
           </div>
         <br><br><br><br><br><br><br><br>
-        <footer class="text-gray-100 body-font bg-gray-900 footer">
+        <footer class="text-gray-100 body-font bg-gray-900 footer" *ngIf="!loader">
           <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
             <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
               <img class="fill-current h-15 w-15" width="54" height="54" viewBox="0 0 54 54" src="../../../assets/logo.png" style="margin-top: 5px;">
-              <span class="ml-3 text-xl text-gray-100">IW</span>
+               
             </a>
             <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0">© 2020 Inception Wave</p>
             <span class="inline-flex sm:ml-auto sm:mt-0 justify-center sm:justify-start tp">

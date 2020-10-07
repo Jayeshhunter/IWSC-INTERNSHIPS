@@ -9,9 +9,15 @@
     .pldr{
         margin-left: 700px;
     }
-    
+    .forMobile{
+        display: none;
     }
-    
+    }
+    @media(max-width: 1000px){
+        .forDesk{
+            display: none;
+        }
+    }
     @media(max-width: 426px){
         .dashhead{
             font-size: 30px;
@@ -20,7 +26,10 @@
             margin-top: 10px;
         }
         .pldr{
-            margin-left: 150px;
+            margin-left: 140px;
+        }
+        .details{
+            zoom: 1.1;
         }
     }
     @media(max-width: 393px){

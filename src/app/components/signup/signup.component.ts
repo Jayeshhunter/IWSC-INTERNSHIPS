@@ -36,11 +36,8 @@ export class SignupComponent implements OnInit {
       .subscribe(
         (res:any) =>{
           EmailValidator.validate(this.registerUserData.email)
-          window.localStorage.setItem('token',res.token)
-          window.localStorage.setItem('un', JSON.stringify(res.user.username))
-          window.localStorage.setItem('ue', JSON.stringify(res.user.email))
-          window.localStorage.setItem('ureg', JSON.stringify(res.user.regno))
-          window.localStorage.setItem('uopt', JSON.stringify(res.user.options))
+          window. sessionStorage.setItem('token',res.token)
+          window. sessionStorage.setItem('un', JSON.stringify(res.user.username))
           setTimeout(() => {
             alert("SIGNUP WAS SUCCESSFULL !!!")
             this.router.navigate(['/dashboard',{username:res.user.username}])
@@ -62,13 +59,13 @@ export class SignupComponent implements OnInit {
   check(){
     if(this.registerUserData.regno==null){
       alert("Register Number is Empty")
-    }if(this.registerUserData.username==null){
+    }else if(this.registerUserData.username==null){
       alert("Username is Empty")
-    }if(this.registerUserData.password==null){
+    }else if(this.registerUserData.password==null){
       alert("Password is Empty")
-    }if(this.registerUserData.options==null){
+    }else if(this.registerUserData.options==null){
       alert("Options is Empty")
-    }if(this.registerUserData.email==null || this.checkmail.test(this.registerUserData.email)==false){
+    }else if(this.registerUserData.email==null || this.checkmail.test(this.registerUserData.email)==false){
       alert("Email is of wrong format")
     }
     else{

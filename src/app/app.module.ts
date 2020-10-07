@@ -61,8 +61,8 @@ import { from } from 'rxjs';
       radius:50,
       outerStrokeWidth:8,
       innerStrokeWidth:4,
-      outerStrokeColor:"red",
-      innerStrokeColor:"orange",
+      outerStrokeColor:"white",
+      innerStrokeColor:"white",
       animationDuration:300
     })
   ],

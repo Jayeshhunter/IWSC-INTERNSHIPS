@@ -8,18 +8,21 @@ import {Location} from '@angular/common';
   styleUrls: ['./tasks.component.css']
 })
 export class TasksComponent implements OnInit {
+  username:any;
   task:any;
   id:any;
-  yes:any;
+  todash:any;
   loader = true;
   constructor(private rs:AppService,public router:ActivatedRoute,public rt:Router,private _location: Location) {
     this.router.params.subscribe(params=>{
+      this.username = JSON.parse(window. sessionStorage.getItem('un'));
       this.id=params.id;
     })
     console.log(this.id);
    }
   
   ngOnInit():void {
+    this.todash = this.rs.getuserun();
     this.rs.taskone(this.id).subscribe
     (
       (response)=>
@@ -33,11 +36,11 @@ export class TasksComponent implements OnInit {
   }
   loggout()
   {
-    localStorage.clear();
+     sessionStorage.clear();
     this.rt.navigate(['/login'])
   }
   dash()
   {
-    this._location.back();
+    this.rt.navigate(['/dashboard',{username:JSON.parse(this.todash)}])
   }
 }

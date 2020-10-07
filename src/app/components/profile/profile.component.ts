@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {AppService} from '../../app.service';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import {Location} from '@angular/common';
 @Component({
   selector: 'app-profile',
@@ -8,27 +8,36 @@ import {Location} from '@angular/common';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit, OnDestroy {
-  uname: Object;
-  users:Object;
-  uemail:Object;
-  uopt:Object;
-  ureg:Object;
-  constructor(private service:AppService,public router:Router,private _location: Location) { }
+  username:any;
+  pfile : any;
+  todash:any;
+  loader = true;
+  constructor(private service:AppService,public router:ActivatedRoute,public rt:Router,private _location: Location) {
+    this.router.params.subscribe(params=>{
+      this.username=params.username;
+    })
+   }
   ngOnInit():void {
-    this.uname = this.service.getuserun()
-    this.uemail = this.service.getuserue()
-    this.uopt = this.service.getuseruopt()
-    this.ureg = this.service.getuserureg()
+    this.todash = this.service.getuserun();
+    this.service.profile(this.username).subscribe(data=>{
+      this.pfile = data;
+      console.log(this.pfile);
+      this.loader = false;
+    })
+    // this.uname = this.service.getuserun()
+    // this.uemail = this.service.getuserue()
+    // this.uopt = this.service.getuseruopt()
+    // this.ureg = this.service.getuserureg()
   }
 
   dash()
   {
-    this._location.back();
+    this.rt.navigate(['/dashboard',{username:JSON.parse(this.todash)}])
   }
   loggout()
   {
-    localStorage.clear();
-    this.router.navigate(['/login'])
+     sessionStorage.clear();
+    this.rt.navigate(['/login'])
   }
   ngOnDestroy() {
 

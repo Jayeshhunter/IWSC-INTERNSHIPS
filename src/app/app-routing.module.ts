@@ -23,7 +23,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'land',component:LandingComponent},
-  {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},
+  {path:'profile/:username',component:ProfileComponent,canActivate:[AuthGuard]},
   {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]},
   {path:'list/:id',component:TasksComponent,canActivate:[AuthGuard]},
   {path:'',component:FirstComponent},
@@ -34,7 +34,7 @@ const routes: Routes = [
   {path:'eachintern',component:EachinternComponent,canActivate:[AdminauthGuard]},
   {path:'admintask',component:AdmintaskComponent,canActivate:[AdminauthGuard]},
   {path:'addtask',component:AddtaskComponent,canActivate:[AdminauthGuard]},
-  {path:'adminprofile',component:AdminprofileComponent,canActivate:[AdminauthGuard]}
+  {path:'adminprofile/:regno',component:AdminprofileComponent,canActivate:[AdminauthGuard]}
 ];
 
 @NgModule({

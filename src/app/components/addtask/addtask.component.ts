@@ -17,7 +17,11 @@ export class Task {
 export class AddtaskComponent implements OnInit {
   newTask = new Task();
   users1:any;
-  constructor(private service:AppService,public router:Router,private _location: Location) { }
+  regno:any;
+  todash:any;
+  constructor(private service:AppService,public router:Router,private _location: Location) { 
+    this.regno = window. sessionStorage.getItem('ureg');
+  }
   onSubmit()
   {
     this.service.addingtask(this.newTask).subscribe((result)=>{
@@ -28,24 +32,24 @@ export class AddtaskComponent implements OnInit {
   }
   loggout()
   {
-    localStorage.clear();
+     sessionStorage.clear();
     this.router.navigate(['/adminlogin'])
   }
   dash()
   {
-    this._location.back();
+    this.router.navigate(['/admindash',{regno:JSON.parse(this.todash)}]);
   }
 
   check(){
     if(this.newTask.username==null){
       alert("Please enter Intern's name")
-    }if(this.newTask.options==null){
+    }else if(this.newTask.options==null){
       alert("Please enter your ID")
-    }if(this.newTask.taskname==null){
+    }else if(this.newTask.taskname==null){
       alert("Please enter Task name")
-    }if(this.newTask.enddate==null){
+    }else if(this.newTask.enddate==null){
       alert("Please enter deadline")
-    }if(this.newTask.taskdetails==null){
+    }else if(this.newTask.taskdetails==null){
       alert("Please enter task details")
     }
     else{
@@ -53,7 +57,9 @@ export class AddtaskComponent implements OnInit {
     }
   }
   ngOnInit():void {
-    this.service.admindashboard(window.localStorage.getItem('ureg')).subscribe(data=>{
+    this.todash = this.service.getuserureg();
+    this.newTask.options = window. sessionStorage.getItem('ureg');
+    this.service.admindashboard(window. sessionStorage.getItem('ureg')).subscribe(data=>{
       this.users1 = data;
       console.log(this.users1);
     }
