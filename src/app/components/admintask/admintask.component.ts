@@ -14,6 +14,7 @@ export class AdmintaskComponent implements OnInit {
   task:any;
   regno:any;
   id:any;
+  datemodi:any;
   todash:any;
   loader = true;
   RR = new Remarks();
@@ -29,9 +30,16 @@ export class AdmintaskComponent implements OnInit {
     this.todash = this.rs.getuserureg();
     this.rs.eachtask(this.id).subscribe(data=>{
       this.task = data;
+      this.datees();
       console.log(this.task);
       this.loader = false;
     })
+  }
+  datees(){
+    this.datemodi = this.revv(this.task.enddate)
+  }
+  revv(d:any){
+    return d.split("-").reverse().join("/");
   }
   approve(id:any){
     this.rs.approve(id).subscribe((res)=>{

@@ -12,6 +12,7 @@ export class TasksComponent implements OnInit {
   task:any;
   id:any;
   todash:any;
+  datemodi:any;
   loader = true;
   constructor(private rs:AppService,public router:ActivatedRoute,public rt:Router,private _location: Location) {
     this.router.params.subscribe(params=>{
@@ -30,9 +31,16 @@ export class TasksComponent implements OnInit {
         this.loader = false;
         console.log("for one",response)
         this.task = response;
+        this.datees();
       }
     ),
     (error)=>console.log(error);
+  }
+  datees(){
+    this.datemodi = this.revv(this.task.enddate)
+  }
+  revv(d:any){
+    return d.split("-").reverse().join("/");
   }
   loggout()
   {

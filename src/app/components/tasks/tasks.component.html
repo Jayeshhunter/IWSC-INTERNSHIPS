@@ -50,7 +50,7 @@
             <div class="mx-auto flex container">
               <h4 *ngIf="task.complete === 'Completed'" class="container sm:text-xl text-xl mb-4 text-left upper"><b style="text-decoration: underline;">STATUS</b><span class="text-green-600"> {{task.complete}}</span></h4>
               <h4 *ngIf="task.complete === 'Incomplete'" class="container sm:text-xl text-xl mb-4 text-left upper"><b style="text-decoration: underline;">STATUS</b><span class="text-red-600"> {{task.complete}}</span></h4>
-              <h4  class="container sm:text-xl text-xl mb-4 text-gray-900 text-right upper"><b style="text-decoration: underline;">DEADLINE</b> {{task.enddate}}</h4>
+              <h4  class="container sm:text-xl text-xl mb-4 text-gray-900 text-right upper"><b style="text-decoration: underline;">DEADLINE</b> {{datemodi}}</h4>
             </div>
             <div class="container mx-auto flex px-5 py-5 items-center justify-center flex-col bg-gray-200 border-2 border-gray-300 rounded-lg hover:border-gray-400">
               <div class="text-center lg:w-full w-full" *ngIf="task.remark !== 'NA'">
