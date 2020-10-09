@@ -26,8 +26,8 @@ export class AdmindashComponent implements OnInit {
    }
   ngOnInit():void {
     this.service.admindashboard(this.regno).subscribe(data=>{
-      this.loader = false;
       this.users1 = data;
+      this.loader = false;
       // console.log(this.users1);
     },
     (err)=>{

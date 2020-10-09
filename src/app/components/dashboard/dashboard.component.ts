@@ -29,8 +29,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit():void {
     this.service.dashboard(this.username).subscribe(data=>{
       this.tasks = data;
+      this.distribute();
       this.loader = false;
-      this.distribute()
     },
     (err)=>{
       if(err instanceof HttpErrorResponse) {

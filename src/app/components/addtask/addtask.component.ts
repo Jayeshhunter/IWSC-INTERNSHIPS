@@ -20,6 +20,7 @@ export class AddtaskComponent implements OnInit {
   users1:any;
   regno:any;
   todash:any;
+  loader = true;
   constructor(private service:AppService,public router:Router,private _location: Location) { 
     this.regno = window. sessionStorage.getItem('ureg');
   }
@@ -76,6 +77,7 @@ export class AddtaskComponent implements OnInit {
     this.newTask.options = window. sessionStorage.getItem('ureg');
     this.service.admindashboard(window. sessionStorage.getItem('ureg')).subscribe(data=>{
       this.users1 = data;
+      this.loader = false;
       console.log(this.users1);
     }
     )

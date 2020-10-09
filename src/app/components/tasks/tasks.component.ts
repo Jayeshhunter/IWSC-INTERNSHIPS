@@ -25,9 +25,9 @@ export class TasksComponent implements OnInit {
   ngOnInit():void {
     this.todash = this.rs.getuserun();
     this.rs.taskone(this.id).subscribe(data=>{
-      this.loader = false;
       this.task = data;
       this.datees();
+      this.loader = false;
     },
     (err)=>{
       if(err instanceof HttpErrorResponse){
