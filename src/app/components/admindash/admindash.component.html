@@ -31,7 +31,7 @@
     </div>
 </nav>  
 <br><br><br><br>
-        <h1 class="text-center text-3xl leading-9 font-extrabold text-gray-900">
+        <h1 class="pldr text-3xl leading-9 font-extrabold text-gray-900">
           <circle-progress *ngIf="loader"
             [percent]="100"
             [radius]="50"
@@ -47,7 +47,7 @@
         <div class="card1" *ngIf="!loader">
           <div style="margin-top: 70px;">
             <div *ngIf="users1.length === 0">
-              <h1 style="text-align: center;" class="font-mono dashhead">NO INTERNS REGISTERED UNDER YOU</h1>
+              <h1 style="text-align: center;" class="dashhead font-extrabold">NO INTERNS REGISTERED UNDER YOU</h1>
               <br><br><br><br><br><br><br><br>
             </div>
             <div *ngIf="users1.length > 0">

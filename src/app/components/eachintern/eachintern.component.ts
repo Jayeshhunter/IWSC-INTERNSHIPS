@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AppService} from '../../app.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import {Location} from '@angular/common';
+import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-eachintern',
   templateUrl: './eachintern.component.html',
@@ -21,7 +22,7 @@ export class EachinternComponent implements OnInit {
   constructor(private service:AppService,public router:ActivatedRoute,public rt:Router,private _location: Location) { 
     this.router.params.subscribe(params=>{
       this.username=params.username;
-      this.U=params.id;
+      //this.U=params.id;
       this.regno = window. sessionStorage.getItem('ureg');
     })
   }
@@ -29,9 +30,24 @@ export class EachinternComponent implements OnInit {
     this.todash = this.service.getuserureg();
     this.service.eachintern(this.username).subscribe(data=>{
       this.users1 = data;
-      this.usernames = data[0].username;
+      if(this.users1.length>0){
+      this.usernames = data[0].username;}
       this.distribute();
       this.loader = false;
+    },
+    (err)=>{
+      if(err instanceof HttpErrorResponse){
+        if(err.status === 500){
+          this.rt.navigate(['/login'])
+          alert("Internal Server Error")
+        }
+      }
+      if(err instanceof HttpErrorResponse){
+        if(err.status === 404){
+          this.rt.navigate(['/login'])
+          alert("Request Not Found")
+        }
+      }
     })
   }
   distribute(){
@@ -43,11 +59,11 @@ export class EachinternComponent implements OnInit {
         this.incomp.push(this.users1[i]);
       }
     }
-    console.log(this.comp);
-    console.log(this.incomp);
+    // console.log(this.comp);
+    // console.log(this.incomp);
   }
   eacht(uu){
-    console.log(uu._id);
+    // console.log(uu._id);
     this.rt.navigate(['/admintask',{id:uu._id}])
   }
   loggout()

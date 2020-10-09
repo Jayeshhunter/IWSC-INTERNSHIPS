@@ -9,7 +9,9 @@
     .pldr{
         margin-left: 700px;
     }
-    
+    .daassh{
+        width: 400px;margin-left: 240px;
+      }
     }
     
     @media(max-width: 426px){
@@ -22,19 +24,30 @@
         .pldr{
             margin-left: 150px;
         }
-        .upper{
-            width: 100%;
-            font-size: 90%;
+        .flex1{
+            display: block;
         }
         .details{
             zoom: 1.1;
         }
     }
-    @media(max-width: 370px){
-        .upper{
-            font-size: 90%;
+
+    @media(max-width: 381px){
+        .pldr{
+            margin-left: 130px;
         }
     }
     
+    @media(max-width: 351px){
+        .pldr{
+            margin-left: 120px;
+        }
+    }
+
+    @media(max-width: 331px){
+        .pldr{
+            margin-left: 110px;
+        }
+    }
     
     @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";

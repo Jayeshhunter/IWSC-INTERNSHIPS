@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AppService} from '../../app.service'
 import { ActivatedRoute,Router } from '@angular/router';
 import {Location} from '@angular/common';
+import { HttpErrorResponse } from '@angular/common/http';
 export class Remarks {
   public remark: any;
 }
@@ -23,7 +24,7 @@ export class AdmintaskComponent implements OnInit {
       this.id=params.id;
       this.regno = window. sessionStorage.getItem('ureg');
     })
-    console.log(this.id);
+    // console.log(this.id);
    }
   
   ngOnInit():void {
@@ -31,8 +32,22 @@ export class AdmintaskComponent implements OnInit {
     this.rs.eachtask(this.id).subscribe(data=>{
       this.task = data;
       this.datees();
-      console.log(this.task);
+      // console.log(this.task);
       this.loader = false;
+    },
+    (err)=>{
+      if(err instanceof HttpErrorResponse){
+        if(err.status === 500){
+          this.rt.navigate(['/login'])
+          alert("Internal Server Error")
+        }
+      }
+      if(err instanceof HttpErrorResponse){
+        if(err.status === 404){
+          this.rt.navigate(['/login'])
+          alert("Request Not Found")
+        }
+      }
     })
   }
   datees(){
@@ -43,7 +58,7 @@ export class AdmintaskComponent implements OnInit {
   }
   approve(id:any){
     this.rs.approve(id).subscribe((res)=>{
-      console.log(res);
+      // console.log(res);
       alert("The task has been updated to Completed");
       this._location.back();
     })
@@ -51,21 +66,21 @@ export class AdmintaskComponent implements OnInit {
   
   disapprove(id:any){
     this.rs.disapprove(id).subscribe((res)=>{
-      console.log(res);
+      // console.log(res);
       alert("The task has been updated to Incompleted");
       this._location.back();
     })
   }
   delete(id:any){
     this.rs.delete(id).subscribe((res)=>{
-      console.log(res);
+      // console.log(res);
       alert("The task has been Deteted");
       this._location.back();
     })
   }
   remarks(){
     this.rs.remark(this.id,this.RR).subscribe((result)=>{
-      window.console.log(result);
+      // window.console.log(result);
       window.alert("Task remarked successfully !!!")
       window.location.reload();
     })

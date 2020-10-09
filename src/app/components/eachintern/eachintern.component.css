@@ -1,5 +1,8 @@
 
 @media(min-width: 1000px){
+    .ddashh{
+        margin-left: 500px;
+    }
     .dashhead{
         font-size: 50px;
     }
@@ -25,6 +28,23 @@
             display: block;
         }
     }
+
+    @media(max-width: 381px){
+        .pldr{
+            margin-left: 130px;
+        }
+    }
     
+    @media(max-width: 351px){
+        .pldr{
+            margin-left: 120px;
+        }
+    }
+
+    @media(max-width: 331px){
+        .pldr{
+            margin-left: 110px;
+        }
+    }
     
     @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";

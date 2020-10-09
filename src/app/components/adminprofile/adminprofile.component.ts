@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AppService} from '../../app.service';
 import {Location} from '@angular/common';
 import { Router,ActivatedRoute } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-adminprofile',
   templateUrl: './adminprofile.component.html',
@@ -17,7 +18,7 @@ export class AdminprofileComponent implements OnInit {
       if(window. sessionStorage.getItem('ureg')==params.regno){
         this.regno=params.regno;}
         else{
-          alert("Not Auth");
+          alert("Not Authorized");
           this.rt.navigate(['/adminlogin']);
         }
     })
@@ -26,8 +27,22 @@ export class AdminprofileComponent implements OnInit {
     this.todash = this.service.getuserureg();
     this.service.profileadmin(this.regno).subscribe(data=>{
       this.pfile = data;
-      console.log(this.pfile);
+      // console.log(this.pfile);
       this.loader = false;
+    },
+    (err)=>{
+      if(err instanceof HttpErrorResponse){
+        if(err.status === 500){
+          this.rt.navigate(['/login'])
+          alert("Internal Server Error")
+        }
+      }
+      if(err instanceof HttpErrorResponse){
+        if(err.status === 404){
+          this.rt.navigate(['/login'])
+          alert("Request Not Found")
+        }
+      }
     })
   }
   dash()

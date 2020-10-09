@@ -6,7 +6,7 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <title>Document</title>
 </head>
-<body class="bg-gray-100">
+<body>
   <nav class="flex items-center justify-between flex-wrap bg-gray-900 p-6 headclass" *ngIf="!loader">
     <div class="flex items-center flex-shrink-0 text-white mr-6">
         <img class="fill-current h-15 w-15 mr-5" width="54" height="54" viewBox="0 0 54 54" src="../../../assets/logo.png" style="margin-top: 5px;">
@@ -27,7 +27,7 @@
     </div>
 </nav>  
     <br><br><br><br>
-    <h1 class="text-center text-3xl leading-9 font-extrabold text-gray-900">
+    <h1 class="pldr text-3xl leading-9 font-extrabold text-gray-900">
       <circle-progress *ngIf="loader"
         [percent]="100"
         [radius]="50"

@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
       if(window. sessionStorage.getItem('un')=='"'+params.username+'"'){
       this.username=params.username;}
       else{
-        alert("Not Auth");
+        alert("Not Authorized");
         this.rt.navigate(['/login']);
       }
     })
@@ -39,6 +39,12 @@ export class DashboardComponent implements OnInit {
           alert("You are not an authorised user.")
         }
       }
+      if(err instanceof HttpErrorResponse){
+        if(err.status === 500){
+          this.rt.navigate(['/login'])
+          alert("Internal Server Error")
+        }
+      }
     })
   }
   distribute(){
@@ -50,8 +56,8 @@ export class DashboardComponent implements OnInit {
         this.incomp.push(this.tasks[i]);
       }
     }
-    console.log(this.comp);
-    console.log(this.incomp);
+    // console.log(this.comp);
+    // console.log(this.incomp);
   }
   loggout()
   {

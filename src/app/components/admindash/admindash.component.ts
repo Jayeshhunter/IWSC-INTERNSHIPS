@@ -19,7 +19,7 @@ export class AdmindashComponent implements OnInit {
         this.regno=params.regno;
         this.username=params.username;}
         else{
-          alert("Not Auth");
+          alert("Not Authorized. Try loggin again");
           this.rt.navigate(['/adminlogin']);
         }
     })
@@ -28,7 +28,7 @@ export class AdmindashComponent implements OnInit {
     this.service.admindashboard(this.regno).subscribe(data=>{
       this.loader = false;
       this.users1 = data;
-      console.log(this.users1);
+      // console.log(this.users1);
     },
     (err)=>{
       if(err instanceof HttpErrorResponse) {
@@ -37,11 +37,23 @@ export class AdmindashComponent implements OnInit {
           alert("You are not an authorised user.")
         }
       }
+      if(err instanceof HttpErrorResponse){
+        if(err.status === 500){
+          this.rt.navigate(['/adminlogin'])
+          alert("Internal Server Error")
+        }
+      }
+      if(err instanceof HttpErrorResponse){
+        if(err.status === 404){
+          this.rt.navigate(['/adminlogin'])
+          alert("Request Not Found")
+        }
+      }
     }
     )
   }
   eachint(uu){
-    console.log(uu.username);
+    // console.log(uu.username);
     this.rt.navigate(['/eachintern',{username:uu.username}])
   }
   loggout()

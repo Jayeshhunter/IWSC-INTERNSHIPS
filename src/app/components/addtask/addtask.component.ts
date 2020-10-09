@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AppService} from '../../app.service';
 import { Router } from '@angular/router';
 import {Location} from '@angular/common';
+import { HttpErrorResponse } from '@angular/common/http';
 export class Task {
   public username: any;
   public options:any;
@@ -25,9 +26,23 @@ export class AddtaskComponent implements OnInit {
   onSubmit()
   {
     this.service.addingtask(this.newTask).subscribe((result)=>{
-      console.warn(result);
+      // console.warn(result);
       alert("Task assigned successfully !!!")
-      this._location.back();
+      this.router.navigate(['/eachintern',{username:this.newTask.username}]);
+    },
+    (err)=>{
+      if(err instanceof HttpErrorResponse){
+        if(err.status === 500){
+          this.router.navigate(['/login'])
+          alert("Internal Server Error")
+        }
+      }
+      if(err instanceof HttpErrorResponse){
+        if(err.status === 404){
+          this.router.navigate(['/login'])
+          alert("Request Not Found")
+        }
+      }
     })
   }
   loggout()
