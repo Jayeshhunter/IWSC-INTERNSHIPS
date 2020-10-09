@@ -9,6 +9,9 @@ html,body{
   padding: 0px;
   overflow-x: hidden;
 }
+.imgdiv{
+  margin-left: 500px;
+}
 *{
   margin: 0;
   padding: 0;
@@ -29,7 +32,7 @@ img{
   height: 400px;
 }
 .b1{
-  margin-left:170px;
+  margin-left:150px;
 }
 .b2{
   margin-left:100px;
@@ -270,6 +273,9 @@ a.animated-button.thar-three:before {
 
 
 @media (max-width: 426px){
+  .imgdiv{
+    margin-left: 10px;
+  }
   .btn{
     position: relative;
     left: 160px;
@@ -282,7 +288,6 @@ a.animated-button.thar-three:before {
    width: 400px;
    height: 400px;
    margin-left: -10px;
-   margin-top: -100px;
  }
  .hed{
    margin-top: 0px;
@@ -306,10 +311,6 @@ a.animated-button.thar-three:before {
  a.animated-button.thar-three{
    padding-left: 30px;
    padding-right: 80px;
- }
- .animation-area{
-   height: 100%;
-   margin-bottom: -100px;
  }
  .btns{
    margin-top: -100px;
@@ -378,6 +379,9 @@ a.animated-button.thar-three:before {
     position: relative;
     left: 160px;
   }
+  .imgdiv{
+    margin-left: 30px;
+  }
   h2{
     position: relative;
     right: 150px;
@@ -385,7 +389,7 @@ a.animated-button.thar-three:before {
   .iimg{
    width: 300px;
    height: 300px;
-   margin-left: -10px;
+   margin-left: 10px;
    margin-top: -50px;
  }
  .hed{
@@ -416,16 +420,13 @@ a.animated-button.thar-three:before {
    margin-bottom: -100px;
  }
  .btns{
-   margin-top: -100px;
+   margin-top: -150px;
    margin-left: -300px;
  }
 }
 
 
 @media (max-width: 360px){
-  .iimg{
-   margin-left: -10px;
- }
  .banner-text h2{
    margin-top: 70px;
    margin-left: -10px;
@@ -439,9 +440,6 @@ a.animated-button.thar-three:before {
 }
 
 @media (max-width: 340px){
-  .iimg{
-   margin-left: -10px;
- }
  .banner-text h2{
    margin-top: 70px;
    margin-left: -20px;
@@ -468,9 +466,6 @@ a.animated-button.thar-three:before {
 }
 
 @media (max-width: 320px){
-  .iimg{
-   margin-left: -10px;
- }
  .banner-text h2{
    margin-top: 70px;
    margin-left: -30px;
@@ -484,9 +479,6 @@ a.animated-button.thar-three:before {
 }
 
 @media (max-width: 300px){
-  .iimg{
-   margin-left: -10px;
- }
  .banner-text h2{
    margin-top: 70px;
    margin-left: -40px;
@@ -500,9 +492,6 @@ a.animated-button.thar-three:before {
 }
 
 @media (max-width: 290px){
-  .iimg{
-   margin-left: -10px;
- }
  .banner-text h2{
    margin-top: 70px;
    margin-left: -50px;
@@ -516,9 +505,6 @@ a.animated-button.thar-three:before {
 }
 
 @media (max-width: 280px){
-  .iimg{
-   margin-left: -10px;
- }
  .banner-text h2{
    margin-top: 70px;
    margin-left: -50px;
