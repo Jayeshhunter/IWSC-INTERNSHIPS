@@ -47,7 +47,7 @@
         </h2>
         <br><br>
         <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full md:w-full px-3 mb-6 md:mb-0">
+        <!-- <div class="w-full md:w-full px-3 mb-6 md:mb-0">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
               Intern's Name
             </label>
@@ -56,7 +56,7 @@
                 <option value="{{user.username}}" name="username" *ngFor="let user of users1">{{user.username}}</option>
               </select>
             </div>
-        </div>
+        </div> -->
         <!-- <div class="w-full md:w-1/2 px-3">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
                 Your ID
@@ -88,7 +88,7 @@
               <textarea class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-10 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Details" name="taskdetails" [(ngModel)]="newTask.taskdetails"></textarea>
             </div>
         </div>
-        <div style="text-align: center;"><button (click)="check()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded-lg text-xl">ADD TASK</button></div>
+        <div style="text-align: center;"><button (click)="onSubnew()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded-lg text-xl">ADD TASK</button></div>
     </form>
     </div>
     <footer class="text-gray-100 body-font bg-gray-900 footer" *ngIf="!loader">

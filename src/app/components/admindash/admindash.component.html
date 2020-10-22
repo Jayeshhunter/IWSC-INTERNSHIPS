@@ -53,6 +53,8 @@
             <div *ngIf="users1.length > 0">
               <h1 style="text-align: center;" class="text-center text-3xl leading-9 font-extrabold text-gray-900">LIST OF INTERNS</h1>
               <br>
+              <div style="text-align: center;"><button routerLink="/addtask" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-xl">ADD NEW TASK</button></div>
+              <br>
               <ul *ngFor="let user of users1;index as i">
                   <li style="cursor: pointer;">
                      <div class="ddashh">

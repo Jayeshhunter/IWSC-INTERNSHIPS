@@ -46,6 +46,15 @@ export class AddtaskComponent implements OnInit {
       }
     })
   }
+  onSubnew(){
+    for (var i = 0; i < this.users1.length ; i++){
+      this.newTask.username = this.users1[i].username;
+      this.service.addingtask(this.newTask).subscribe((result)=>{
+        console.warn(result);
+      })
+    }
+    this.router.navigate(['/admindash',{regno:JSON.parse(this.todash)}]);
+  }
   loggout()
   {
      sessionStorage.clear();
