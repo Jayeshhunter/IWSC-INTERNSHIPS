@@ -3,22 +3,18 @@ import {AppService} from '../../app.service'
 import { ActivatedRoute,Router } from '@angular/router';
 import {Location} from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
-export class Remarks {
-  public remark: any;
-}
 @Component({
-  selector: 'app-admintask',
-  templateUrl: './admintask.component.html',
-  styleUrls: ['./admintask.component.css']
+  selector: 'app-viewalleachtask',
+  templateUrl: './viewalleachtask.component.html',
+  styleUrls: ['./viewalleachtask.component.css']
 })
-export class AdmintaskComponent implements OnInit {
+export class ViewalleachtaskComponent implements OnInit {
   task:any;
   regno:any;
   id:any;
   datemodi:any;
   todash:any;
   loader = true;
-  RR = new Remarks();
   constructor(private rs:AppService,public router:ActivatedRoute, private rt:Router,private _location: Location) {
     this.router.params.subscribe(params=>{
       this.id=params.id;
@@ -26,8 +22,8 @@ export class AdmintaskComponent implements OnInit {
     })
     // console.log(this.id);
    }
-  
-  ngOnInit():void {
+
+   ngOnInit():void {
     this.todash = this.rs.getuserureg();
     this.rs.eachtask(this.id).subscribe(data=>{
       this.task = data;
@@ -38,13 +34,13 @@ export class AdmintaskComponent implements OnInit {
     (err)=>{
       if(err instanceof HttpErrorResponse){
         if(err.status === 500){
-          this.rt.navigate(['/adminlogin'])
+          this.rt.navigate(['/login'])
           alert("Internal Server Error")
         }
       }
       if(err instanceof HttpErrorResponse){
         if(err.status === 404){
-          this.rt.navigate(['/adminlogin'])
+          this.rt.navigate(['/login'])
           alert("Request Not Found")
         }
       }
@@ -56,35 +52,6 @@ export class AdmintaskComponent implements OnInit {
   revv(d:any){
     return d.split("-").reverse().join("/");
   }
-  approve(id:any){
-    this.rs.approve(id).subscribe((res)=>{
-      // console.log(res);
-      // alert("The task has been updated to Completed");
-      this._location.back();
-    })
-  }  
-  
-  disapprove(id:any){
-    this.rs.disapprove(id).subscribe((res)=>{
-      // console.log(res);
-      // alert("The task has been updated to Incompleted");
-      this._location.back();
-    })
-  }
-  delete(id:any){
-    this.rs.delete(id).subscribe((res)=>{
-      // console.log(res);
-      // alert("The task has been Deteted");
-      this._location.back();
-    })
-  }
-  remarks(){
-    this.rs.remark(this.id,this.RR).subscribe((result)=>{
-      // window.console.log(result);
-      // window.alert("Task remarked successfully !!!")
-      window.location.reload();
-    })
-  } 
   loggout()
   {
      sessionStorage.clear();
@@ -95,6 +62,4 @@ export class AdmintaskComponent implements OnInit {
     this.rt.navigate(['/admindash',{regno:JSON.parse(this.todash)}]);
   }
 
-  }
-
-
+}

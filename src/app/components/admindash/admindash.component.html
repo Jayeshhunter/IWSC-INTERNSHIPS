@@ -46,20 +46,22 @@
         </h1>
         <div class="card1" *ngIf="!loader">
           <div style="margin-top: 70px;">
+            <h3 style="text-align: center;" class="text-center text-l leading-9 font-extrabold text-gray-900"><a routerLink="/alladmins" class=" hover:text-gray-900">LIST OF ALL ADMINS</a></h3>
+            <br>
             <div *ngIf="users1.length === 0">
               <h1 style="text-align: center;" class="dashhead font-extrabold">NO INTERNS REGISTERED UNDER YOU</h1>
               <br><br><br><br><br><br><br><br>
             </div>
             <div *ngIf="users1.length > 0">
-              <h1 style="text-align: center;" class="text-center text-3xl leading-9 font-extrabold text-gray-900">LIST OF INTERNS</h1>
+              <h1 style="text-align: center;" class="text-center text-3xl leading-9 font-extrabold text-gray-900">LIST OF MY INTERNS</h1>
               <br>
               <div style="text-align: center;"><button routerLink="/addtask" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-xl">ADD NEW TASK</button></div>
               <br>
               <ul *ngFor="let user of users1;index as i">
-                  <li style="cursor: pointer;">
+                  <li>
                      <div class="ddashh">
                       <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                      <a class="atname" (click)="eachint(user)">
+                      <a class="atname" (click)="eachint(user)"  style="cursor: pointer;">
                           <div class="h-full border-2 border-gray-500 rounded-lg overflow-hidden bg-blue-300 hover:border-gray-900">
                             <div class="p-4">
                               <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-left font-mono"><b style="text-transform:capitalize;">{{i+1}}. {{user.username}} ({{user.regno}})</b></h1>

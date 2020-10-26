@@ -61,6 +61,11 @@
                 <h4 style="text-decoration: underline;" class="sm:text-xl text-xl mb-4 text-gray-900"><b>DETAILS</b></h4>
                 <p class="mb-8 leading-relaxed details" style="color: black;"><b>{{task.taskdetails}}</b></p>
               </div>
+              <div class="text-center lg:w-full w-full">
+                <h4 style="text-decoration: underline;" class="sm:text-xl text-xl mb-4 text-gray-900"><b>LINK</b></h4>
+                <a href="{{task.link}}" class="mb-8 leading-relaxed details" style="color: black;"><b>{{task.link}}</b></a>
+              </div>
+              <br>
               <div class="text-center lg:w-full w-full" *ngIf="task.remark === 'NA'">
                 <h4 style="text-decoration: underline;" class="sm:text-xl text-xl mb-4 text-gray-900"><b>REMARKS</b></h4>
                 <p class="mb-8 leading-relaxed">{{task.remark}}</p>

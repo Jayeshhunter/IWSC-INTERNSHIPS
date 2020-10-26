@@ -28,6 +28,10 @@ import { AuthGuard } from './auth.guard';
 import {AdminauthGuard} from './adminauth.guard'
 import {TokenInterceptorService} from './token-interceptor.service'
 import { from } from 'rxjs';
+import { ViewalldashComponent } from './components/viewalldash/viewalldash.component';
+import { ViewalleachinternComponent } from './components/viewalleachintern/viewalleachintern.component';
+import { ViewalleachtaskComponent } from './components/viewalleachtask/viewalleachtask.component';
+import { ViewalleachadminComponent } from './components/viewalleachadmin/viewalleachadmin.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,11 @@ import { from } from 'rxjs';
     AdmintaskComponent,
     AddtaskComponent,
     LoadingSpinnerComponent,
-    SidebarComponent
+    SidebarComponent,
+    ViewalldashComponent,
+    ViewalleachinternComponent,
+    ViewalleachtaskComponent,
+    ViewalleachadminComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ export class Task {
   public taskname: any;
   public enddate: string;
   public taskdetails: any;
+  public link: any;
 }
 @Component({
   selector: 'app-addtask',
@@ -24,28 +25,28 @@ export class AddtaskComponent implements OnInit {
   constructor(private service:AppService,public router:Router,private _location: Location) { 
     this.regno = window. sessionStorage.getItem('ureg');
   }
-  onSubmit()
-  {
-    this.service.addingtask(this.newTask).subscribe((result)=>{
-      // console.warn(result);
-      alert("Task assigned successfully !!!")
-      this.router.navigate(['/eachintern',{username:this.newTask.username}]);
-    },
-    (err)=>{
-      if(err instanceof HttpErrorResponse){
-        if(err.status === 500){
-          this.router.navigate(['/login'])
-          alert("Internal Server Error")
-        }
-      }
-      if(err instanceof HttpErrorResponse){
-        if(err.status === 404){
-          this.router.navigate(['/login'])
-          alert("Request Not Found")
-        }
-      }
-    })
-  }
+  // onSubmit()
+  // {
+  //   this.service.addingtask(this.newTask).subscribe((result)=>{
+  //     // console.warn(result);
+  //     alert("Task assigned successfully !!!")
+  //     this.router.navigate(['/eachintern',{username:this.newTask.username}]);
+  //   },
+  //   (err)=>{
+  //     if(err instanceof HttpErrorResponse){
+  //       if(err.status === 500){
+  //         this.router.navigate(['/login'])
+  //         alert("Internal Server Error")
+  //       }
+  //     }
+  //     if(err instanceof HttpErrorResponse){
+  //       if(err.status === 404){
+  //         this.router.navigate(['/login'])
+  //         alert("Request Not Found")
+  //       }
+  //     }
+  //   })
+  // }
   onSubnew(){
     for (var i = 0; i < this.users1.length ; i++){
       this.newTask.username = this.users1[i].username;
@@ -66,19 +67,22 @@ export class AddtaskComponent implements OnInit {
   }
 
   check(){
-    if(this.newTask.username==null){
-      alert("Please enter Intern's name")
-    }else if(this.newTask.options==null){
-      alert("Please enter your ID")
-    }else if(this.newTask.taskname==null){
+    // if(this.newTask.username==null){
+    //   alert("Please enter Intern's name")
+    // }else if(this.newTask.options==null){
+    //   alert("Please enter your ID")
+    // }
+    if(this.newTask.taskname==null){
       alert("Please enter Task name")
     }else if(this.newTask.enddate==null){
       alert("Please enter deadline")
     }else if(this.newTask.taskdetails==null){
       alert("Please enter task details")
+    }else if(this.newTask.link==null){
+      alert("Please enter link")
     }
     else{
-      this.onSubmit()
+      this.onSubnew()
     }
   }
   ngOnInit():void {

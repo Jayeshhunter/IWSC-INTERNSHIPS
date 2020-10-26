@@ -21,7 +21,7 @@
         <a (click)="dash()" class="block lg:inline-block lg:mt-0 text-white hover:text-white mr-4 tp" style="cursor: pointer;">
             HOME
         </a>
-        <a routerLink="/adminprofile/{{regno}}" class="block lg:inline-block lg:mt-0 text-white hover:text-white mr-4 tp hover:no-underline">
+        <a routerLink="/adminprofile/{{myregno}}" class="block lg:inline-block lg:mt-0 text-white hover:text-white mr-4 tp hover:no-underline">
             PROFILE
         </a>
         </div>
@@ -46,69 +46,27 @@
         </h1>
         <div class="card1" *ngIf="!loader">
           <div style="margin-top: 70px;">
-            <div *ngIf="users1.length === 0">
-              <h1 style="text-align: center;" class="text-center text-3xl leading-9 font-extrabold text-gray-900">NO TASKS ASSIGNED FOT THIS USER</h1>
+              <h1 style="text-align: center;" class="text-center text-3xl leading-9 font-extrabold text-gray-900">LIST OF ALL ADMINS</h1>
               <br>
-              <!-- <div style="text-align: center;"><button routerLink="/addtask" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-xl">ADD NEW TASK</button></div> -->
-              <br><br><br><br><br>
-            </div>
-            <div *ngIf="users1.length > 0">
-              <h1 style="text-align: center;" class="text-center text-3xl leading-9 font-extrabold text-gray-900" style="text-transform: capitalize;">{{usernames}} TASKS</h1>
-              <br><br>
-              <!-- <div style="text-align: center;"><button routerLink="/addtask" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg text-xl">ADD NEW TASK</button></div> -->
-              <br><br>
-              <div class="flex flex1">
-                <div class="w-1/2" class="daassh">
-                  <h2 style="text-align: center;" class="text-center text-2xl leading-9 font-extrabold text-gray-900">Incomplete</h2><br>
-                    <div *ngIf="incomp.length === 0">
-                      <h4 style="text-align: center;" class="text-center text-xl leading-9 text-gray-900">No Tasks</h4>
-                    </div>
-                  <ul *ngFor="let user of incomp;index as i">
-                    <div *ngIf="user.complete==='Incomplete'">
-                      <li style="cursor: pointer;">
-                         <div>
-                          <div class="w-full px-3 mb-6 md:mb-0">
-                            <a (click)="eacht(user)">
-                              <div class="h-full border-2 border-gray-500 rounded-lg overflow-hidden bg-red-600 hover:border-gray-900">
-                                <div class="p-4">
-                                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-left font-mono"><b style="text-transform:capitalize;">{{i+1}}. {{user.taskname}} </b></h1>
-                                </div>
-                              </div>
-                            </a>
+              <ul *ngFor="let user of allu;index as i">
+                  <li>
+                     <div class="ddashh">
+                      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                      <a class="atname" (click)="eachint(user)"  style="cursor: pointer;">
+                          <div class="h-full border-2 border-gray-500 rounded-lg overflow-hidden bg-blue-400 hover:border-gray-900">
+                            <div class="p-4">
+                              <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-left font-mono"><b style="text-transform:capitalize;">{{i+1}}. {{user.username}} ({{user.regno}})</b></h1>
+                            </div>
                           </div>
-                         </div>
-                      </li>
-                      <br>
-                    </div>
-                  </ul>
-                </div>
-                <div class="w-1/2" class="daassh">
-                  <h2 style="text-align: center;" class="text-center text-2xl leading-9 font-extrabold text-gray-900">Complete</h2><br>
-                  <div *ngIf="comp.length === 0">
-                    <h4 style="text-align: center;" class="text-center text-xl leading-9 text-gray-900">No Tasks</h4>
-                  </div>
-                  <ul *ngFor="let user of comp;index as i">
-                    <div *ngIf="user.complete==='Completed'">
-                      <li  style="cursor: pointer;">
-                         <div>
-                          <div class="w-full px-3 mb-6 md:mb-0">
-                            <a (click)="eacht(user)">
-                              <div class="h-full border-2 border-gray-500 rounded-lg overflow-hidden bg-green-400 hover:border-gray-900">
-                                <div class="p-4">
-                                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3 text-left font-mono"><b style="text-transform:capitalize;">{{i+1}}. {{user.taskname}} </b></h1>
-                                </div>
-                              </div>
-                            </a>
-                          </div>
-                         </div>
-                      </li>
-                      <br>
-                    </div>
-                  </ul>
-                </div>
-              </div>
-            </div>
+                        </a>
+                        </div>
+                     </div>
+                  </li>
+                  <br>
+              </ul>
+              <br><br>
           </div>
+  
         <br><br><br><br><br><br><br><br>
         <footer class="text-gray-100 body-font bg-gray-900 footer" *ngIf="!loader">
           <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">

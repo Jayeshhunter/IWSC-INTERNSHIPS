@@ -31,7 +31,6 @@ export class AdminsignupComponent implements OnInit {
           window. sessionStorage.setItem('token',res.token)
           window. sessionStorage.setItem('ureg', JSON.stringify(res.admin.regno))
           setTimeout(()=>{
-            alert("SIGNUP WAS SUCCESSFULL !!!");
             this.router.navigate(['/admindash',{regno:res.admin.regno}])
             this.spinner.hide();
           },4000)
@@ -53,12 +52,12 @@ export class AdminsignupComponent implements OnInit {
     return re.test(str);
   }
   checkRegno(str) {
-    var re = /^[0-9]{4,7}$/;
+    var re = /^[0-9]{10,10}$/;
     return re.test(str);
   }  
   check(){
     if (this.registerAdminData.regno==null|| !this.checkRegno(this.registerAdminData.regno)){
-      alert("Please provide register number having length between 4-7 numeric characters.")
+      alert("Please provide register number having length 10 numeric characters.")
     } else if (this.registerAdminData.username == null || this.registerAdminData.username.length <= 5){
       alert("Please provide username with length greater than 5 characters")
     } else if (this.registerAdminData.password == null || !this.checkPassword(this.registerAdminData.password)){

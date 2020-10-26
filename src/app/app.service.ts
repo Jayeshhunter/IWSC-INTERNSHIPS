@@ -4,9 +4,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AppService {
-  url:string="https://iw-intern-portal-backend-app.herokuapp.com";
+  // url:string="https://iw-intern-portal-backend-app.herokuapp.com";
 
-  //url:string="http://localhost:3000";
+  url:string="https://iw-backend-internship.herokuapp.com";
 
   constructor(private http:HttpClient) { 
   }

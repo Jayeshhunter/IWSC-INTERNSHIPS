@@ -39,7 +39,6 @@ export class SignupComponent implements OnInit {
           window. sessionStorage.setItem('token',res.token)
           window. sessionStorage.setItem('un', JSON.stringify(res.user.username))
           setTimeout(() => {
-            alert("SIGNUP WAS SUCCESSFULL !!!")
             this.router.navigate(['/dashboard',{username:res.user.username}])
             this.spinner.hide();
           }, 4000);
@@ -61,12 +60,12 @@ export class SignupComponent implements OnInit {
   return re.test(str);
   }
   checkRegno(str) {
-    var re = /^[0-9]{4,7}$/;
+    var re = /^[0-9]{10,10}$/;
     return re.test(str);
     }
   check(){
     if(this.registerUserData.regno==null|| !this.checkRegno(this.registerUserData.regno)){
-      alert("Please provide register number having length between 4-7 numeric characters.")
+      alert("Please provide register number having length 10 numeric characters.")
     } else if (this.registerUserData.username == null || this.registerUserData.username.length <= 5 ){
       alert("Please provide username with length greater than 5 characters")
     } else if (this.registerUserData.password == null || !this.checkPassword(this.registerUserData.password)){

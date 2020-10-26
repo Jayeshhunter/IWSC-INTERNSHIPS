@@ -15,6 +15,10 @@ import { EachinternComponent } from './components/eachintern/eachintern.componen
 import { AdmintaskComponent } from './components/admintask/admintask.component';
 import { AddtaskComponent } from './components/addtask/addtask.component';
 import { AdminprofileComponent } from './components/adminprofile/adminprofile.component';
+import { ViewalldashComponent } from './components/viewalldash/viewalldash.component';
+import { ViewalleachinternComponent } from './components/viewalleachintern/viewalleachintern.component';
+import { ViewalleachtaskComponent } from './components/viewalleachtask/viewalleachtask.component';
+import { ViewalleachadminComponent } from './components/viewalleachadmin/viewalleachadmin.component';
 import { AuthGuard } from './auth.guard';
 import {AdminauthGuard} from './adminauth.guard'
 import {} from '@angular/router'
@@ -34,7 +38,11 @@ const routes: Routes = [
   {path:'eachintern',component:EachinternComponent,canActivate:[AdminauthGuard]},
   {path:'admintask',component:AdmintaskComponent,canActivate:[AdminauthGuard]},
   {path:'addtask',component:AddtaskComponent,canActivate:[AdminauthGuard]},
-  {path:'adminprofile/:regno',component:AdminprofileComponent,canActivate:[AdminauthGuard]}
+  {path:'adminprofile/:regno',component:AdminprofileComponent,canActivate:[AdminauthGuard]},
+  {path:'alladmins',component:ViewalldashComponent,canActivate:[AdminauthGuard]},
+  {path:'alladmins/interns',component:ViewalleachadminComponent,canActivate:[AdminauthGuard]},
+  {path:'alladmins/interns/tasks',component:ViewalleachinternComponent,canActivate:[AdminauthGuard]},
+  {path:'alladmins/interns/tasks/onetask',component:ViewalleachtaskComponent,canActivate:[AdminauthGuard]}
 ];
 
 @NgModule({
